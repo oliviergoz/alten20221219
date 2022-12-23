@@ -5,7 +5,7 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-import eshop.util.JpaContext;
+import eshopRest.rest.FournisseurCrudRest;
 import eshopRest.rest.ProduitRest;
 
 public class LoadRestServiceApplication extends Application{
@@ -14,6 +14,7 @@ public class LoadRestServiceApplication extends Application{
 	
 	public LoadRestServiceApplication() {
 		singletons.add(new ProduitRest());
+		singletons.add(new FournisseurCrudRest());
 	}
 	
 	@Override
