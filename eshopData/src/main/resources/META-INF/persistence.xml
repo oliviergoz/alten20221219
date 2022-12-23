@@ -21,7 +21,7 @@
 			<!-- configuration hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/>
 			<!-- afficher les requetes executees par hibernate (juste pour explication )-->
-			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.show_sql" value="false"/>
 			<property name="hibernate.format_sql" value="true"/>
 			<!-- none, 
 				validate:on verifie la coherance entre les entites et les tables 
