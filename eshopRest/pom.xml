@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ajc.formation.alten</groupId>
-	<artifactId>demoWebService</artifactId>
+	<artifactId>eshopRest</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>demoWebService</name>
+	<name>eshopRest</name>
 	<packaging>war</packaging>
 	<properties>
 		<maven.compiler.source>15</maven.compiler.source>
@@ -11,38 +11,28 @@
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 	<dependencies>
-		<!-->	<dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.15.3.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson2-provider</artifactId>
-			<version>6.2.2.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jackson-provider</artifactId>
 			<version>3.15.3.Final</version>
 		</dependency>
--->
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.17</version>
+			<groupId>ajc.formation.alten</groupId>
+			<artifactId>eshopvData</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
-			<version>1.17</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
-			<version>1.17</version>
-		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -52,6 +42,6 @@
 				<version>3.3.2</version>
 			</plugin>
 		</plugins>
-		<finalName>demo</finalName>
+		<finalName>eshop</finalName>
 	</build>
 </project>

@@ -4,8 +4,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
-import org.apache.http.HttpStatus;
-
 //definition URL du service
 @Path("/message/hello")
 public class MessageRestService {
@@ -16,13 +14,13 @@ public class MessageRestService {
 		//Response =>la reponse renvoye
 		//doit avoir un status http
 		//peut avoir un contenu=>object
-		return Response.status(HttpStatus.SC_OK).entity("hello word").build();
+		return Response.status(200).entity("hello word").build();
 	}
 	
 	@GET
 	@Path("/bye")
 	public Response goodbye() {
-		return Response.status(HttpStatus.SC_OK).entity("goodbye").build();
+		return Response.status(200).entity("goodbye").build();
 	}
 
 }
