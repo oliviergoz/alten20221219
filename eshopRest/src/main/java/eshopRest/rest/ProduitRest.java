@@ -10,11 +10,11 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import eshop.dao.DaoFournisseur;
 import eshop.dao.DaoProduit;
 import eshop.entity.Produit;
 import eshop.util.JpaContext;
@@ -24,6 +24,7 @@ import eshop.util.JpaContext;
 public class ProduitRest {
 
 	private DaoProduit daoProduit = JpaContext.getDaoProduit();
+	private DaoFournisseur daoFournisseur = JpaContext.getDaoFournisseur();
 
 	@GET
 	@Path("")
@@ -52,6 +53,9 @@ public class ProduitRest {
 	@Path("")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Produit createProduit(Produit produit) {
+		if (produit.getFournisseur() != null) {
+			produit.setFournisseur(daoFournisseur.findByKey(produit.getFournisseur().getId()));
+		}
 		daoProduit.insert(produit);
 		return produit;
 	}
@@ -67,9 +71,14 @@ public class ProduitRest {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Produit update(@PathParam("id") Long id, Produit produit) {
 		Produit produitEnBase = findById(id);
-		produitEnBase.setLibelle(produit.getLibelle());
+		produitEnBase.setLibelle(produit.getLibelle() != null ? produit.getLibelle() : produitEnBase.getLibelle());
 		produitEnBase.setDescription(produit.getDescription());
 		produitEnBase.setPrix(produit.getPrix());
+		if (produit.getFournisseur() != null) {
+			produitEnBase.setFournisseur(daoFournisseur.findByKey(produit.getFournisseur().getId()));
+		} else {
+			produitEnBase.setFournisseur(null);
+		}
 		return daoProduit.update(produitEnBase);
 	}
 
