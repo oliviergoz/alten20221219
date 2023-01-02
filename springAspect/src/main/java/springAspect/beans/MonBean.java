@@ -3,9 +3,11 @@ package springAspect.beans;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MonBean {
+public class MonBean implements MonInterface {
 
-	public void methodeDeMonBean() {
-		System.out.println("hello world");
+	public String methodeDeMonBean() {
+		System.out.println("dans la methode");
+		// throw new IllegalArgumentException();
+		return "hello world";
 	}
 }

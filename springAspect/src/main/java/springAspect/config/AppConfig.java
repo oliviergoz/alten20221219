@@ -2,9 +2,11 @@ package springAspect.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan("springAspect.beans")
+@ComponentScan({ "springAspect.beans", "springAspect.aspect" })
+@EnableAspectJAutoProxy
 public class AppConfig {
 
 }

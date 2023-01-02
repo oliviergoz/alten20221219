@@ -7,17 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import springAspect.beans.MonBean;
+import springAspect.beans.MonInterface;
 import springAspect.config.AppConfig;
 
 @SpringJUnitConfig(AppConfig.class)
 class AspectTest {
 
 	@Autowired
-	MonBean monBean;
+	MonInterface monBean;
 
 	@Test
 	void test() {
-		monBean.methodeDeMonBean();
+		System.out.println(monBean.methodeDeMonBean());
 	}
 
 }
