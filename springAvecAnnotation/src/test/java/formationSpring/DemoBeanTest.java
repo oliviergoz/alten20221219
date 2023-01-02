@@ -30,16 +30,10 @@ class DemoBeanTest {
 
 	@Test
 	void chargementDemoBeanTest() {
-		// demander à spring un objet
-//		assertNotNull(ctx.getBean(DemoBean.class));
-//		DemoBean demo=ctx.getBean(DemoBean.class);
-		// si plusieurs beans correspondent=>error
-		assertNotNull(ctx.getBean("monBean2"));
-		assertNotNull(ctx.getBean("monBean"));
-		assertNotEquals(ctx.getBean("monBean2"), ctx.getBean("monBean"));
-		DemoBean demoBean = (DemoBean) ctx.getBean("monBean");
-		demoBean = ctx.getBean("monBean", DemoBean.class);
-		assertEquals("olivier", demoBean.getNom());
+		assertNotNull(ctx.getBean("demoBean"));
+		DemoBean demoBean = (DemoBean) ctx.getBean("demoBean");
+		demoBean = ctx.getBean("demoBean", DemoBean.class);
+	
 	}
 
 }

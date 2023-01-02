@@ -6,14 +6,19 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-		
-		<bean id="autreBean" class="formationSpring.beans.AutreBean"></bean>
-		
-		<bean id="monBean" class="formationSpring.beans.DemoBean">
-			<property name="nom" value="olivier"></property>
-			<property name="autreBean" ref="autreBean"></property>
-		</bean>
-		<bean id="monBean2" class="formationSpring.beans.DemoBean"></bean>
+	<bean id="guitare" class="musique.beans.Guitare"></bean>
+	<bean id="piano" class="musique.beans.Piano"></bean>
+
+	<bean id="guitariste" class="musique.beans.Guitariste">
+		<property name="instrument">
+			<bean class="musique.beans.Guitare"></bean>
+		</property>
+	</bean>
+
+	<bean id="pianiste" class="musique.beans.Pianiste">
+		<property name="instrument" ref="guitare">
+		</property>
+	</bean>
 </beans>
 
 
