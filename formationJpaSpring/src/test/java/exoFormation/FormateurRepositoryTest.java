@@ -29,6 +29,7 @@ class FormateurRepositoryTest {
 	void requetePerso() {
 		formateurRepo.findByInterneIsTrue();
 		formateurRepo.findByNomContaining("o");
+		
 	}
 
 	@Test
