@@ -20,8 +20,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan("exoFormation.dao")
 @EnableTransactionManagement
+@ComponentScan("exoFormation.service")
 @PropertySource("classpath:datasource.properties")
 @EnableJpaRepositories(basePackages = "exoFormation.repository")
 public class JpaConfig {
@@ -51,7 +51,7 @@ public class JpaConfig {
 		properties.setProperty("hibernate.hbm2ddl.auto", "validate");
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL10Dialect");
 		properties.setProperty("hibernate.format_sql", "true");
-		properties.setProperty("hibernate.show_sql", "true");
+		properties.setProperty("hibernate.show_sql", "false");
 		emf.setJpaProperties(properties);
 		return emf;
 	}
