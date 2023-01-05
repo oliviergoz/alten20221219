@@ -12,7 +12,9 @@
 		il faut un login
 	</c:if>
 	<form action="" method="post">
-		<input name="login" placeholder="saisir un login">
+		<input name="prenom" placeholder="saisir un prenom"
+			value="${personne.prenom}"> <input name="nom"
+			placeholder="saisir un nom" value="${personne.nom}">
 		<button type="submit">envoyer</button>
 	</form>
 </body>
