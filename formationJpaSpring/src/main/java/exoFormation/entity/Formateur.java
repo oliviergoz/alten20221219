@@ -77,4 +77,8 @@ public class Formateur extends Personne {
 		this.modulesAnimes = modulesAnimes;
 	}
 
+	public String getInfos() {
+		return getId() + " " + getPrenom() + " " + getNom();
+	}
+
 }

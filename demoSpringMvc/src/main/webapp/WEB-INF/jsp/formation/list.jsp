@@ -15,6 +15,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 	crossorigin="anonymous"></script>
+<base href="${pageContext.request.contextPath}/">
 <title>formation</title>
 </head>
 <body class="container">
@@ -22,52 +23,49 @@
 		<a href="formateur" class="btn btn-link">formateur</a> <a
 			href="formation" class="btn btn-link">formation</a>
 	</nav>
-	<h1>liste des formateur</h1>
+	<h1>liste des formations</h1>
 	<table class="table">
 		<tr>
 			<th>id:</th>
-			<th>prenom:</th>
-			<th>nom:</th>
-			<th>email:</th>
-			<th>adresse:</th>
-			<th>cout:</th>
-			<th>interne:</th>
+			<th>libellé:</th>
+			<th>description:</th>
+			<th>referent:</th>
+			<th>distancielle:</th>
 			<th></th>
 			<th></th>
 		</tr>
 		<c:forEach items="${page.getContent()}" var="f">
 			<tr>
 				<td>${f.id}</td>
-				<td>${f.prenom}</td>
-				<td>${f.nom}</td>
-				<td>${f.email}</td>
-				<td>${f.adresse.numero}${f.adresse.rue}<br />${f.adresse.codePostal}
-					${f.adresse.ville}
-				</td>
-				<td>${f.cout}</td>
+				<td>${f.libelle}</td>
 				<td><c:choose>
-						<c:when test="${f.interne == true }">
+						<c:when test="${f.description.length()<30}"> ${f.description}</c:when>
+						<c:otherwise>${f.description.substring(0,30)}...</c:otherwise>
+					</c:choose></td>
+				<td>${f.referent.prenom}&nbsp;${f.referent.nom }</td>
+				<td><c:choose>
+						<c:when test="${f.distanciel == true }">
 							<input type="radio" checked="checked" readonly="readonly">
 						</c:when>
 						<c:otherwise>
 							<input type="radio" readonly="readonly">
 						</c:otherwise>
 					</c:choose></td>
-				<td><a href="./formateur/edit?id=${f.id}"
+				<td><a href="./formation/edit?id=${f.id}"
 					class="btn btn-outline-primary">editer</a></td>
-				<td><a href="./formateur/delete?id=${f.id}"
+				<td><a href="./formation/delete?id=${f.id}"
 					class="btn btn-outline-danger">supprimer</a></td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="./formateur/add" class="btn btn-link">nouveau formateur</a>
+	<a href="./formation/add" class="btn btn-link">nouvelle formation</a>
 	<nav aria-label="Page navigation example">
 		<ul class="pagination">
 			<li class="page-item"><a class="page-link"
-				href="./formateur?page=${page.previousOrFirstPageable().getPageNumber()}">Previous</a></li>
+				href="./formation?page=${page.previousOrFirstPageable().getPageNumber()}">precedent</a></li>
 
 			<li class="page-item"><a class="page-link"
-				href="./formateur?page=${page.nextOrLastPageable().getPageNumber()}">Next</a></li>
+				href="./formation?page=${page.nextOrLastPageable().getPageNumber()}">suivant</a></li>
 		</ul>
 	</nav>
 </body>

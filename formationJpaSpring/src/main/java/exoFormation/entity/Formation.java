@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "formation")
@@ -27,6 +29,7 @@ public class Formation {
 	@Column(name = "formation_id")
 	private Long id;
 	@Column(name = "formation_libelle")
+	@NotEmpty
 	private String libelle;
 	@Column(name = "formation_description", columnDefinition = "TEXT")
 	private String description;
@@ -37,16 +40,25 @@ public class Formation {
 	private Salle salle;
 	@ManyToOne
 	@JoinColumn(name = "formation_referent_id", foreignKey = @ForeignKey(name = "formation_formation_referent_id_fk"), nullable = false)
+	@NotNull
 	private Formateur referent;
 	@ManyToMany
 	@JoinTable(name = "participant_formation", joinColumns = @JoinColumn(name = "participant_formation_formation_id", foreignKey = @ForeignKey(name = "participant_formation_formation_id_fk")), inverseJoinColumns = @JoinColumn(name = "participant_formation_participant_id", foreignKey = @ForeignKey(name = "participant_formation_participant_id")))
 	private Set<Participant> stagiaires;
 	@OneToMany(mappedBy = "id.formation")
-	//@Transient
+	// @Transient
 	private Set<ModuleFormation> modules;
 
 	public Formation() {
 
+	}
+
+	public Formation(@NotEmpty String libelle, String description, boolean distanciel, @NotNull Formateur referent) {
+		super();
+		this.libelle = libelle;
+		this.description = description;
+		this.distanciel = distanciel;
+		this.referent = referent;
 	}
 
 	public Formation(String libelle, String description, boolean distanciel, Salle salle, Formateur referent,

@@ -61,8 +61,8 @@ public class FormateurService {
 
 	private void deleteById(Long id) {
 		Formateur formateur = getById(id);
-		formationRepo.updateByReferentSetReferentToNull(formateur);
-		formateurRepo.delete(formateur);
+		formationRepo.deleteByReferent(formateur);
+		formateurRepo.delete(getById(id));
 	}
 
 	// pas bien prod mais pratique pour le module spring mvc
