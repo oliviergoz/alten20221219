@@ -26,12 +26,12 @@ public class FormateurService {
 
 	public void create(Formateur formateur) {
 		checkFormateurIsNotNull(formateur);
-		if (formateur.getPrenom() == null || formateur.getPrenom().isEmpty()) {
-			throw new FormateurException("prenom vide");
-		}
-		if (formateur.getNom() == null || formateur.getNom().isEmpty()) {
-			throw new FormateurException("nom vide");
-		}
+//		if (formateur.getPrenom() == null || formateur.getPrenom().isEmpty()) {
+//			throw new FormateurException("prenom vide");
+//		}
+//		if (formateur.getNom() == null || formateur.getNom().isEmpty()) {
+//			throw new FormateurException("nom vide");
+//		}
 		formateurRepo.save(formateur);
 	}
 
@@ -94,8 +94,8 @@ public class FormateurService {
 	public Formateur update(Formateur formateur) {
 		// @formatter:off
 		Formateur formateurEnBase = getById(formateur.getId());
-		formateurEnBase.setPrenom(formateur.getPrenom() != null ? formateur.getPrenom() : formateurEnBase.getPrenom());
-		formateurEnBase.setNom(formateur.getNom() != null ? formateur.getNom() : formateurEnBase.getNom());
+		formateurEnBase.setPrenom(formateur.getPrenom() == null||formateur.getPrenom().isEmpty() ? formateurEnBase.getPrenom() : formateur.getPrenom());
+		formateurEnBase.setNom(formateur.getNom() == null||formateur.getNom().isEmpty()? formateurEnBase.getNom() : formateur.getNom());
 		formateurEnBase.setEmail(formateur.getEmail());
 		formateurEnBase.setTelephone(formateur.getTelephone());
 		if (formateur.getAdresse() != null) {
