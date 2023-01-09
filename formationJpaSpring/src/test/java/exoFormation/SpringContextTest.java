@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import exoFormation.config.JpaConfig;
+import formation.config.JpaConfig;
 
 @SpringJUnitConfig(JpaConfig.class)
 class SpringContextTest {

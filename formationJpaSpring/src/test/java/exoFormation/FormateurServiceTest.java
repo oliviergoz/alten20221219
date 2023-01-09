@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import exoFormation.config.JpaConfig;
-import exoFormation.entity.Adresse;
-import exoFormation.entity.Formateur;
-import exoFormation.exception.FormateurException;
-import exoFormation.exception.IdException;
-import exoFormation.service.FormateurService;
+import formation.config.JpaConfig;
+import formation.entity.Adresse;
+import formation.entity.Formateur;
+import formation.exception.FormateurException;
+import formation.exception.IdException;
+import formation.service.FormateurService;
 
 @SpringJUnitConfig(JpaConfig.class)
 class FormateurServiceTest {

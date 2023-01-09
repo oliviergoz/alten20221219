@@ -14,10 +14,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import exoFormation.config.JpaConfig;
-import exoFormation.entity.Formateur;
-import exoFormation.exception.FormateurException;
-import exoFormation.repository.FormateurRepository;
+import formation.config.JpaConfig;
+import formation.entity.Formateur;
+import formation.exception.FormateurException;
+import formation.repository.FormateurRepository;
 
 @SpringJUnitConfig(JpaConfig.class)
 class FormateurRepositoryTest {
