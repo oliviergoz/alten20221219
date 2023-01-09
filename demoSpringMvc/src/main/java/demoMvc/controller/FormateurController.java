@@ -51,10 +51,11 @@ public class FormateurController {
 		return "formateur/edit";
 	}
 
-	@PostMapping("")
-	public String save(Model model,@Valid @ModelAttribute Formateur formateur,BindingResult br) {
-		if(br.hasErrors()) {
-			return form(model,formateur);
+	// @PostMapping("")
+	@GetMapping("/save")
+	public String save(Model model, @Valid @ModelAttribute Formateur formateur, BindingResult br) {
+		if (br.hasErrors()) {
+			return form(model, formateur);
 		}
 		if (formateur.getId() != null) {
 			formateurService.update(formateur);

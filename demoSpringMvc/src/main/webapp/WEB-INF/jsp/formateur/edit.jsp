@@ -28,7 +28,7 @@
 		<h1>edition fournisseur</h1>
 		<div class="card w-100">
 			<div class="card-body">
-				<form:form action="formateur" method="post"
+				<form:form action="formateur/save" method="get"
 					modelAttribute="formateur">
 					<div class="form-group">
 						<form:label path="id">id:</form:label>
@@ -38,7 +38,8 @@
 					<div class="form-group">
 						<form:label path="prenom">prenom:</form:label>
 						<form:input path="prenom" cssClass="form-control" />
-						<form:errors path="prenom" cssClass="alert alert-danger" element="div"></form:errors>
+						<form:errors path="prenom" cssClass="alert alert-danger"
+							element="div"></form:errors>
 					</div>
 					<div class="form-group">
 						<form:label path="nom">nom:</form:label>
@@ -50,6 +51,11 @@
 					<div class="form-group">
 						<form:label path="email">email:</form:label>
 						<form:input type="email" path="email" cssClass="form-control" />
+					</div>
+					<div class="form-group">
+						<form:label path="dtNaiss">date de naissance:</form:label>
+						<form:input type="date" path="dtNaiss" cssClass="form-control" />
+						<form:errors path="dtNaiss"></form:errors>
 					</div>
 					<div class="form-group">
 						<form:label path="cout">cout:</form:label>

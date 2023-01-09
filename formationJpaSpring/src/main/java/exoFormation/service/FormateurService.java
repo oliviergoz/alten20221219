@@ -98,6 +98,7 @@ public class FormateurService {
 		formateurEnBase.setNom(formateur.getNom() == null||formateur.getNom().isEmpty()? formateurEnBase.getNom() : formateur.getNom());
 		formateurEnBase.setEmail(formateur.getEmail());
 		formateurEnBase.setTelephone(formateur.getTelephone());
+		formateurEnBase.setDtNaiss(formateur.getDtNaiss());
 		if (formateur.getAdresse() != null) {
 			formateurEnBase.setAdresse(
 								new Adresse(

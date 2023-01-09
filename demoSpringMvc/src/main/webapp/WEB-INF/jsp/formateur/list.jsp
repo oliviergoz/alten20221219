@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +30,7 @@
 			<th>prenom:</th>
 			<th>nom:</th>
 			<th>email:</th>
+			<th>date de naissance</th>
 			<th>adresse:</th>
 			<th>cout:</th>
 			<th>interne:</th>
@@ -41,6 +43,10 @@
 				<td>${f.prenom}</td>
 				<td>${f.nom}</td>
 				<td>${f.email}</td>
+				<td><fmt:parseDate value="${f.dtNaiss}"
+						pattern="yyyy-MM-dd" var="pardeDate" type="date"></fmt:parseDate>
+					<fmt:formatDate value="${pardeDate}" pattern="dd/MM/yyyy" />
+				</td>
 				<td>${f.adresse.numero}${f.adresse.rue}<br />${f.adresse.codePostal}
 					${f.adresse.ville}
 				</td>

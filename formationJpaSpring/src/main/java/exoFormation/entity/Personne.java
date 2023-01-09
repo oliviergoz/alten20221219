@@ -1,13 +1,17 @@
 package exoFormation.entity;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotBlank;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @MappedSuperclass
 public abstract class Personne {
@@ -20,6 +24,9 @@ public abstract class Personne {
 	private String nom;
 	private String email;
 	private String telephone;
+	@Column(name = "date_naissance")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dtNaiss;
 	@Embedded
 	private Adresse adresse;
 
@@ -74,6 +81,14 @@ public abstract class Personne {
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+	public LocalDate getDtNaiss() {
+		return dtNaiss;
+	}
+
+	public void setDtNaiss(LocalDate dtNaiss) {
+		this.dtNaiss = dtNaiss;
 	}
 
 	public Adresse getAdresse() {
