@@ -24,7 +24,7 @@ public class FormateurService {
 	@Autowired
 	private FormationRepository formationRepo;
 
-	public void create(Formateur formateur) {
+	public Formateur create(Formateur formateur) {
 		checkFormateurIsNotNull(formateur);
 //		if (formateur.getPrenom() == null || formateur.getPrenom().isEmpty()) {
 //			throw new FormateurException("prenom vide");
@@ -32,7 +32,7 @@ public class FormateurService {
 //		if (formateur.getNom() == null || formateur.getNom().isEmpty()) {
 //			throw new FormateurException("nom vide");
 //		}
-		formateurRepo.save(formateur);
+		return formateurRepo.save(formateur);
 	}
 
 	private void checkFormateurIsNotNull(Formateur formateur) {

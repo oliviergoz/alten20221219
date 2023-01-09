@@ -29,6 +29,7 @@ import formation.entity.Formation;
 import formation.jsonviews.Views;
 import formation.service.FormateurService;
 import formation.service.FormationService;
+import formation.util.Check;
 
 @RestController
 @RequestMapping("/api/formation")
@@ -57,9 +58,7 @@ public class FormationRestController {
 	@PostMapping("")
 	@JsonView(Views.FormationWithReferent.class)
 	public Formation create(@Valid @RequestBody Formation formation, BindingResult br) {
-		if (br.hasErrors()) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-		}
+		Check.checkBindingResulHasError(br);
 		return formationService.create(formation);
 	}
 
@@ -67,9 +66,7 @@ public class FormationRestController {
 	@PutMapping("/{id}")
 	@JsonView(Views.FormationWithReferent.class)
 	public Formation update(@Valid @RequestBody Formation formation, BindingResult br, @PathVariable Long id) {
-		if (br.hasErrors()) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-		}
+		Check.checkBindingResulHasError(br);
 		formation.setId(id);
 		return formationService.update(formation);
 	}
