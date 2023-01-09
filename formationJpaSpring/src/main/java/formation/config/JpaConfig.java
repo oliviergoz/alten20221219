@@ -21,9 +21,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("exoFormation.service")
+@ComponentScan("formation.service")
 @PropertySource("classpath:datasource.properties")
-@EnableJpaRepositories(basePackages = "exoFormation.repository")
+@EnableJpaRepositories(basePackages = "formation.repository")
 public class JpaConfig {
 
 	@Autowired
@@ -45,7 +45,7 @@ public class JpaConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 		emf.setDataSource(dataSource);
-		emf.setPackagesToScan("exoFormation.entity");
+		emf.setPackagesToScan("formation.entity");
 		emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto", "update");

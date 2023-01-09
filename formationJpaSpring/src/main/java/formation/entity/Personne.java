@@ -13,21 +13,32 @@ import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import formation.jsonviews.Views;
+
 @MappedSuperclass
 public abstract class Personne {
+	@JsonView(Views.Common.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqPersonne")
 	private Long id;
+	@JsonView(Views.Common.class)
 	@NotBlank(message = "il faut un prenom")
 	private String prenom;
 	@NotBlank
+	@JsonView(Views.Common.class)
 	private String nom;
+	@JsonView(Views.Common.class)
 	private String email;
+	@JsonView(Views.Common.class)
 	private String telephone;
+	@JsonView(Views.Common.class)
 	@Column(name = "date_naissance")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dtNaiss;
 	@Embedded
+	@JsonView(Views.Common.class)
 	private Adresse adresse;
 
 	public Personne() {

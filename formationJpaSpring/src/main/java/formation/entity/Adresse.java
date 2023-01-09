@@ -2,11 +2,19 @@ package formation.entity;
 
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import formation.jsonviews.Views;
+
 @Embeddable
 public class Adresse {
+	@JsonView(Views.Common.class)
 	private String numero;
+	@JsonView(Views.Common.class)
 	private String rue;
+	@JsonView(Views.Common.class)
 	private String codePostal;
+	@JsonView(Views.Common.class)
 	private String ville;
 
 	public Adresse() {

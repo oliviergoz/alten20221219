@@ -13,6 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import formation.jsonviews.Views;
+
 @Entity
 @Table(name = "formateur")
 @AttributeOverride(name = "adresse.numero", column = @Column(name = "formateur_numero", length = 50))
@@ -26,8 +30,11 @@ import javax.persistence.Table;
 @AttributeOverride(name = "telephone", column = @Column(name = "formateur_telephone", length = 20))
 @SequenceGenerator(name = "seqPersonne", sequenceName = "formateur_seq", initialValue = 50, allocationSize = 1)
 public class Formateur extends Personne {
+	@JsonView(Views.Common.class)
 	private boolean interne;
+	@JsonView(Views.Common.class)
 	private double cout;
+	@JsonView(Views.FormateurWithFormationsCommeReferents.class)
 	@OneToMany(mappedBy = "referent")
 	private Set<Formation> formationsCommeReferent;
 

@@ -16,23 +16,30 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+import formation.jsonviews.Views;
 
 @Entity
 @Table(name = "formation")
 @SequenceGenerator(name = "seqFormation", sequenceName = "formation_formation_id", initialValue = 10, allocationSize = 1)
 public class Formation {
+	@JsonView(Views.Common.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqFormation")
 	@Column(name = "formation_id")
 	private Long id;
 	@Column(name = "formation_libelle")
 	@NotEmpty
+	@JsonView(Views.Common.class)
 	private String libelle;
+	@JsonView(Views.Common.class)
 	@Column(name = "formation_description", columnDefinition = "TEXT")
 	private String description;
+	@JsonView(Views.Common.class)
 	@Column(name = "formation_distanciel")
 	private boolean distanciel;
 	@ManyToOne
@@ -41,10 +48,12 @@ public class Formation {
 	@ManyToOne
 	@JoinColumn(name = "formation_referent_id", foreignKey = @ForeignKey(name = "formation_formation_referent_id_fk"), nullable = false)
 	@NotNull
+	@JsonView(Views.FormationWithReferent.class)
 	private Formateur referent;
 	@ManyToMany
 	@JoinTable(name = "participant_formation", joinColumns = @JoinColumn(name = "participant_formation_formation_id", foreignKey = @ForeignKey(name = "participant_formation_formation_id_fk")), inverseJoinColumns = @JoinColumn(name = "participant_formation_participant_id", foreignKey = @ForeignKey(name = "participant_formation_participant_id")))
 	private Set<Participant> stagiaires;
+
 	@OneToMany(mappedBy = "id.formation")
 	// @Transient
 	private Set<ModuleFormation> modules;

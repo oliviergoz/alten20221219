@@ -45,6 +45,15 @@ public class FormateurService {
 		if (id == null) {
 			throw new IdException();
 		}
+		return formateurRepo.findById(id).orElseThrow(() -> {
+			throw new FormateurException("formateur inconnu");
+		});
+	}
+
+	public Formateur getByIdWithFormationsCommeReferent(Long id) {
+		if (id == null) {
+			throw new IdException();
+		}
 		return formateurRepo.findByIdFetchFormationsCommeReferent(id).orElseThrow(() -> {
 			throw new FormateurException("formateur inconnu");
 		});

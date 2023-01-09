@@ -18,12 +18,15 @@ public class FormationService {
 
 	@Autowired
 	private FormationRepository formationRepo;
+	@Autowired
+	private FormateurService formateurService;
 
-	public void create(Formation formation) {
+	public Formation create(Formation formation) {
 		checkFormationIsNotNull(formation);
 		checkFormationLibelleIsNotNullOrEmpty(formation);
 		checkFormationReferentIsNotNull(formation);
-		formationRepo.save(formation);
+		formation.setReferent(formateurService.getById(formation.getReferent().getId()));
+		return formationRepo.save(formation);
 	}
 
 	private void checkFormationReferentIsNotNull(Formation formation) {
@@ -48,7 +51,7 @@ public class FormationService {
 		if (id == null) {
 			throw new IdException();
 		}
-		return formationRepo.findById(id).orElseThrow(FormationException::new);
+		return formationRepo.findById(id).orElseThrow(IdException::new);
 	}
 
 	public void delete(Formation formation) {
