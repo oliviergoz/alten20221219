@@ -100,7 +100,7 @@ public class FormationService {
 		formationEnBase.setLibelle(formation.getLibelle());
 		formationEnBase.setDescription(formation.getDescription());
 		checkFormationReferentIsNotNull(formation);
-		formationEnBase.setReferent(formation.getReferent());
+		formationEnBase.setReferent(formateurService.getById(formation.getReferent().getId()));
 		formationEnBase.setDistanciel(formation.isDistanciel());
 		return formationRepo.save(formationEnBase);
 		// @formatter:on
