@@ -1,7 +1,10 @@
 package ajc.formation.alten.formation.services;
 
 import java.util.List;
+import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,6 +17,7 @@ import ajc.formation.alten.formation.exception.FormateurException;
 import ajc.formation.alten.formation.exception.IdException;
 import ajc.formation.alten.formation.repository.FormateurRepository;
 import ajc.formation.alten.formation.repository.FormationRepository;
+import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Valid;
 import jakarta.validation.Validator;
 
@@ -29,16 +33,15 @@ public class FormateurService {
 	@Autowired
 	private Validator validator;
 
-	public Formateur create(@Valid Formateur formateur) {
-		checkFormateurIsNotNull(formateur);
-//		if (formateur.getPrenom() == null || formateur.getPrenom().isEmpty()) {
-//			throw new FormateurException("prenom vide");
-//		}
-//		if (formateur.getNom() == null || formateur.getNom().isEmpty()) {
-//			throw new FormateurException("nom vide");
-//		}
+	private static final Logger LOG = LoggerFactory.getLogger(FormateurService.class);
 
-		if (!validator.validate(formateur).isEmpty()) {
+	public Formateur create(Formateur formateur) {
+		checkFormateurIsNotNull(formateur);
+		Set<ConstraintViolation<Formateur>> violations = validator.validate(formateur);
+		if (!violations.isEmpty()) {
+			violations.forEach(v -> {
+				LOG.debug(v.toString());
+			});
 			throw new FormateurException();
 		}
 		return formateurRepo.save(formateur);
