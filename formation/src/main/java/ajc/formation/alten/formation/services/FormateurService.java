@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import ajc.formation.alten.formation.entity.Adresse;
 import ajc.formation.alten.formation.entity.Formateur;
@@ -13,6 +14,8 @@ import ajc.formation.alten.formation.exception.FormateurException;
 import ajc.formation.alten.formation.exception.IdException;
 import ajc.formation.alten.formation.repository.FormateurRepository;
 import ajc.formation.alten.formation.repository.FormationRepository;
+import jakarta.validation.Valid;
+import jakarta.validation.Validator;
 
 @Service
 public class FormateurService {
@@ -23,8 +26,10 @@ public class FormateurService {
 	private FormateurRepository formateurRepo;
 	@Autowired
 	private FormationRepository formationRepo;
+	@Autowired
+	private Validator validator;
 
-	public Formateur create(Formateur formateur) {
+	public Formateur create(@Valid Formateur formateur) {
 		checkFormateurIsNotNull(formateur);
 //		if (formateur.getPrenom() == null || formateur.getPrenom().isEmpty()) {
 //			throw new FormateurException("prenom vide");
@@ -32,6 +37,10 @@ public class FormateurService {
 //		if (formateur.getNom() == null || formateur.getNom().isEmpty()) {
 //			throw new FormateurException("nom vide");
 //		}
+
+		if (!validator.validate(formateur).isEmpty()) {
+			throw new FormateurException();
+		}
 		return formateurRepo.save(formateur);
 	}
 
