@@ -3,13 +3,15 @@ package ajc.formation.alten.formation.services;
 import java.util.List;
 import java.util.Set;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.BindingResult;
 
 import ajc.formation.alten.formation.entity.Adresse;
 import ajc.formation.alten.formation.entity.Formateur;
@@ -17,9 +19,6 @@ import ajc.formation.alten.formation.exception.FormateurException;
 import ajc.formation.alten.formation.exception.IdException;
 import ajc.formation.alten.formation.repository.FormateurRepository;
 import ajc.formation.alten.formation.repository.FormationRepository;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Valid;
-import jakarta.validation.Validator;
 
 @Service
 public class FormateurService {

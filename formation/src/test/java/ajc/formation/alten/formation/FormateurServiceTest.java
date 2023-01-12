@@ -3,6 +3,8 @@ package ajc.formation.alten.formation;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import javax.transaction.Transactional;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +15,6 @@ import ajc.formation.alten.formation.entity.Formateur;
 import ajc.formation.alten.formation.exception.FormateurException;
 import ajc.formation.alten.formation.exception.IdException;
 import ajc.formation.alten.formation.services.FormateurService;
-import jakarta.transaction.Transactional;
 
 @SpringBootTest
 @Transactional

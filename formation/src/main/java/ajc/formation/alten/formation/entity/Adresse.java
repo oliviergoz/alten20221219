@@ -1,9 +1,10 @@
 package ajc.formation.alten.formation.entity;
 
+import javax.persistence.Embeddable;
+
 import com.fasterxml.jackson.annotation.JsonView;
 
 import ajc.formation.alten.formation.jsonviews.Views;
-import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class Adresse {

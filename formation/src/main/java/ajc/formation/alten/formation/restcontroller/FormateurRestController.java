@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.ReflectionUtils;
@@ -27,7 +29,6 @@ import ajc.formation.alten.formation.entity.Formateur;
 import ajc.formation.alten.formation.jsonviews.Views;
 import ajc.formation.alten.formation.services.FormateurService;
 import ajc.formation.alten.formation.util.Check;
-import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/formateur")

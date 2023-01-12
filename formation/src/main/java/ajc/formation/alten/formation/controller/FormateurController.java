@@ -1,5 +1,7 @@
 package ajc.formation.alten.formation.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import ajc.formation.alten.formation.entity.Formateur;
 import ajc.formation.alten.formation.services.FormateurService;
-import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/formateur")
