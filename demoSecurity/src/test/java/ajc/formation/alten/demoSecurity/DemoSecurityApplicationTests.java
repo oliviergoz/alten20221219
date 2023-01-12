@@ -1,6 +1,5 @@
 package ajc.formation.alten.demoSecurity;
 
-import org.assertj.core.api.PathAssert;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

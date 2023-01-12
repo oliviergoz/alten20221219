@@ -8,5 +8,7 @@
 </head>
 <body>
 <h1>admin home</h1>
+<h2> bonjour ${utilisateur.login}</h2>
+<h2>valable que pour  le login ${pageContext.request.userPrincipal.name }</h2>
 </body>
 </html>
