@@ -1,1 +1,7 @@
-<p>{{hello()}} {{personne.prenom}} {{personne.nom}}</p>
+<p>{{hello()}} {{personneEnJson.prenom}} {{personneEnJson.nom}}</p>
+<img src="assets/{{image}}" width="30%" height="30%" />
+<img [src]="objectImage.nom" width="30%" height="30%" />
+
+<button (click)="logHello('dslmjdqljdkqlqdjkkdj')">click</button>
+
+<input [(ngModel)]="personneEnJson.prenom" />

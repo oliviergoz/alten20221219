@@ -15,19 +15,17 @@ export class Personne {
   //   this.nom = nom;
   // }
 
-  private _prenom?: string;
+  private _prenom?: string | undefined;
+
+  public get prenom(): string | undefined {
+    return this._prenom;
+  }
+  public set prenom(value: string | undefined) {
+    this._prenom = value;
+  }
 
   constructor(prenom?: string, private _nom?: string) {
     this._prenom = prenom;
-  }
-
-  //getter setter marche comme des attributs
-  get prenom(): string | undefined {
-    return this._prenom;
-  }
-
-  set prenom(value: string | undefined) {
-    this._prenom = value;
   }
 
   //methodes
