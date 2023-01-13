@@ -1,6 +1,7 @@
 import { Image } from '../../model/image';
 
 import { Component, OnInit } from '@angular/core';
+import { Personne } from '../../model/personne';
 
 @Component({
   selector: 'app-demo',
