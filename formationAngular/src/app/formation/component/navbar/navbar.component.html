@@ -1,0 +1,26 @@
+<nav>
+  <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-link"
+    >home</a
+  >
+  <a routerLink="/produits" routerLinkActive="active" class="btn btn-link"
+    >produits</a
+  >
+  <a
+    [routerLink]="['/parametre']"
+    routerLinkActive="active"
+    class="btn btn-link"
+    >component parametre sans valeur</a
+  >
+  <a
+    [routerLink]="['/parametre', 'olivier']"
+    routerLinkActive="active"
+    class="btn btn-link"
+    >component parametre avec olivier comme valeur</a
+  >
+  <a
+    routerLink="/parametre/kenny"
+    routerLinkActive="active"
+    class="btn btn-link"
+    >component parametre avec kenny comme valeur</a
+  >
+</nav>
