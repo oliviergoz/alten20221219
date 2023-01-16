@@ -1,7 +1,3 @@
-<p>{{hello()}} {{personneEnJson.prenom}} {{personneEnJson.nom}}</p>
-<img src="assets/{{image}}" width="30%" height="30%" />
-<img [src]="objectImage.nom" width="30%" height="30%" />
-
-<button (click)="logHello('dslmjdqljdkqlqdjkkdj')">click</button>
-
-<input [(ngModel)]="personneEnJson.prenom" />
+<app-input information="hello world" info2="toto"></app-input>
+<app-input [personne]="personneEnJson"></app-input>
+<app-produit></app-produit>

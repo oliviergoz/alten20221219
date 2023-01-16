@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DemoComponent } from './formation/component/demo/demo.component';
 import { FormsModule } from '@angular/forms';
 import { ProduitComponent } from './formation/component/produit/produit.component';
+import { InputComponent } from './formation/component/input/input.component';
 
 @NgModule({
-  declarations: [AppComponent, DemoComponent, ProduitComponent],
+  declarations: [AppComponent, DemoComponent, ProduitComponent, InputComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
