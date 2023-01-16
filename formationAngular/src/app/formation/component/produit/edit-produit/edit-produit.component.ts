@@ -10,10 +10,13 @@ export class EditProduitComponent {
   produit: Produit = new Produit();
 
   @Output()
-  produitPret: EventEmitter<Produit> = new EventEmitter();
-
+  produitPret: EventEmitter<any> = new EventEmitter();
+  //any=>{}
   envoyerProduit() {
-    this.produitPret.emit(this.produit);
+    this.produitPret.emit({
+      libelle: this.produit.libelle,
+      prix: this.produit.prix,
+    });
     this.produit = new Produit();
   }
 }

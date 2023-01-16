@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class ProduitComponent {
   produitAEnvoyer = new Produit();
 
-  recuperationProduit(produitRecu: Produit) {
+  recuperationProduit(produitRecu: any) {
     this.produitAEnvoyer = produitRecu;
   }
 }

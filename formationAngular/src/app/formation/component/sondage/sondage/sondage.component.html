@@ -1,0 +1,13 @@
+<div>{{ equipeEnTete }} {{ vote }}</div>
+<app-equipe
+  equipe="equipe1"
+  (voteRecu)="traitementVoteRecu($event)"
+></app-equipe>
+<app-equipe
+  equipe="equipe2"
+  (voteRecu)="traitementVoteRecu($event)"
+></app-equipe>
+<app-equipe
+  equipe="equipe3"
+  (voteRecu)="traitementVoteRecu($event)"
+></app-equipe>

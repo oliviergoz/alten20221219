@@ -10,6 +10,8 @@ import { InputComponent } from './formation/component/input/input.component';
 import { OutputComponent } from './formation/component/output/output.component';
 import { DisplayProduitComponent } from './formation/component/produit/display.produit/display.produit.component';
 import { EditProduitComponent } from './formation/component/produit/edit-produit/edit-produit.component';
+import { ElementSondageComponent } from './formation/component/sondage/element-sondage/element-sondage.component';
+import { SondageComponent } from './formation/component/sondage/sondage/sondage.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { EditProduitComponent } from './formation/component/produit/edit-produit
     DisplayProduitComponent,
     OutputComponent,
     EditProduitComponent,
+    ElementSondageComponent,
+    SondageComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
