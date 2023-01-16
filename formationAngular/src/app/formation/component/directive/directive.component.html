@@ -1,0 +1,21 @@
+<ng-template #autreBalise>le truc a afficher si le test est faux</ng-template>
+
+<div *ngIf="true">directive *ngIf</div>
+
+<div *ngIf="false; else autreBalise">*ngIf avec un else</div>
+
+<div>
+  directive *ngFor
+  <ul>
+    <li *ngFor="let prenom of tab; let index = index">
+      {{ index }} {{ prenom }}
+    </li>
+  </ul>
+
+  <table>
+    <tr *ngFor="let p of personnes">
+      <td>{{ p.prenom }}</td>
+      <td>{{ p.nom }}</td>
+    </tr>
+  </table>
+</div>

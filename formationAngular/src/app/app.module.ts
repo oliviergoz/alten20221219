@@ -12,6 +12,7 @@ import { DisplayProduitComponent } from './formation/component/produit/display.p
 import { EditProduitComponent } from './formation/component/produit/edit-produit/edit-produit.component';
 import { ElementSondageComponent } from './formation/component/sondage/element-sondage/element-sondage.component';
 import { SondageComponent } from './formation/component/sondage/sondage/sondage.component';
+import { DirectiveComponent } from './formation/component/directive/directive.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SondageComponent } from './formation/component/sondage/sondage/sondage.
     EditProduitComponent,
     ElementSondageComponent,
     SondageComponent,
+    DirectiveComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
