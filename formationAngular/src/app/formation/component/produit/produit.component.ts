@@ -9,9 +9,10 @@ import { Component } from '@angular/core';
 export class ProduitComponent {
   infoProduit = '';
   produit: Produit = new Produit();
+  produitAEnvoyer = new Produit();
 
   afficherMessage() {
-    this.infoProduit = `les infos du produit saisie:${this.produit.libelle} ${this.produit.prix}`;
+    this.produitAEnvoyer = new Produit(this.produit.libelle, this.produit.prix);
     this.produit = new Produit();
   }
 }

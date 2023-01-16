@@ -22,4 +22,8 @@ export class DemoComponent {
   logHello(param: string) {
     console.log(param);
   }
+
+  traitementEvenement(param: string) {
+    console.log(param);
+  }
 }

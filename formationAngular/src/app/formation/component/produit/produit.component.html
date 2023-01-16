@@ -3,6 +3,4 @@
   <input [(ngModel)]="produit.prix" /><br />
   <button (click)="afficherMessage()">ok</button>
 </div>
-<div>
-  {{infoProduit}}
-</div>
+<app-displayProduit [produit]="produitAEnvoyer"></app-displayProduit>
