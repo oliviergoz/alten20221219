@@ -1,0 +1,7 @@
+<table>
+  <tr *ngFor="let produit of produits">
+    <td>{{ produit.libelle }}</td>
+    <td>{{ produit.prix }}</td>
+  </tr>
+</table>
+<app-edit-produit (produitPret)="ajouterProduit($event)"></app-edit-produit>

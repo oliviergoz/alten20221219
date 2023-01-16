@@ -13,6 +13,8 @@ import { EditProduitComponent } from './formation/component/produit/edit-produit
 import { ElementSondageComponent } from './formation/component/sondage/element-sondage/element-sondage.component';
 import { SondageComponent } from './formation/component/sondage/sondage/sondage.component';
 import { DirectiveComponent } from './formation/component/directive/directive.component';
+import { ListProduitComponent } from './formation/component/produit/list-produit/list-produit.component';
+import { CouleurDirective } from './formation/directive/couleur.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { DirectiveComponent } from './formation/component/directive/directive.co
     ElementSondageComponent,
     SondageComponent,
     DirectiveComponent,
+    ListProduitComponent,
+    CouleurDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
