@@ -7,12 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./produit.component.css'],
 })
 export class ProduitComponent {
-  infoProduit = '';
-  produit: Produit = new Produit();
   produitAEnvoyer = new Produit();
 
-  afficherMessage() {
-    this.produitAEnvoyer = new Produit(this.produit.libelle, this.produit.prix);
-    this.produit = new Produit();
+  recuperationProduit(produitRecu: Produit) {
+    this.produitAEnvoyer = produitRecu;
   }
 }

@@ -6,8 +6,10 @@ import { DemoComponent } from './formation/component/demo/demo.component';
 import { FormsModule } from '@angular/forms';
 import { ProduitComponent } from './formation/component/produit/produit.component';
 import { InputComponent } from './formation/component/input/input.component';
-import { DisplayProduitComponent } from './formation/component/produit/display.produit/display.produit.component';
+
 import { OutputComponent } from './formation/component/output/output.component';
+import { DisplayProduitComponent } from './formation/component/produit/display.produit/display.produit.component';
+import { EditProduitComponent } from './formation/component/produit/edit-produit/edit-produit.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { OutputComponent } from './formation/component/output/output.component';
     InputComponent,
     DisplayProduitComponent,
     OutputComponent,
+    EditProduitComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

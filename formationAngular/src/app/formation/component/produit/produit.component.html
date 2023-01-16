@@ -1,6 +1,4 @@
-<div>
-  <input [(ngModel)]="produit.libelle" /><br />
-  <input [(ngModel)]="produit.prix" /><br />
-  <button (click)="afficherMessage()">ok</button>
-</div>
+<app-edit-produit
+  (produitPret)="recuperationProduit($event)"
+></app-edit-produit>
 <app-displayProduit [produit]="produitAEnvoyer"></app-displayProduit>
