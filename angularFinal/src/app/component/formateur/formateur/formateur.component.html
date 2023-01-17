@@ -1,1 +1,25 @@
-<p>formateur works!</p>
+<div>
+  <div class="form-group">
+    <label for="id">id:</label>
+    <input id="id" [(ngModel)]="formateur.id" class="form-control" readonly />
+  </div>
+  <div class="form-group">
+    <label for="prenom">prenom:</label>
+    <input id="prenom" [(ngModel)]="formateur.prenom" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="nom">nom:</label>
+    <input id="nom" [(ngModel)]="formateur.nom" class="form-control" />
+  </div>
+  <div class="form-group">
+    <button (click)="save()" class="btn btn-outline-primary">
+      enregistrer
+    </button>
+    <a
+      routerLink="/formateur"
+      routerLinkActive="active"
+      class="btn btn-outline-warning"
+      >annuler</a
+    >
+  </div>
+</div>

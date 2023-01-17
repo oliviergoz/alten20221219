@@ -4,5 +4,21 @@
     <td>{{ formateur.prenom }}</td>
     <td>{{ formateur.nom }}</td>
     <td>{{ formateur.adresse?.numero }}</td>
+    <td>
+      <a
+        routerLink="/formateur/edit/{{ formateur.id }}"
+        routerLinkActive="active"
+        class="btn btn-outline-primary"
+        >editer</a
+      >
+    </td>
+    <td>
+      <button (click)="delete(formateur.id!)" class="btn btn-outline-danger">
+        supprimer
+      </button>
+    </td>
   </tr>
 </table>
+<a routerLink="/formateur/add" routerLinkActive="active" class="btn btn-link"
+  >nouveau formateur</a
+>

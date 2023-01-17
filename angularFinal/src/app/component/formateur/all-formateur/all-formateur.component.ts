@@ -11,8 +11,18 @@ export class AllFormateurComponent implements OnInit {
   formateurs: Formateur[] = [];
   constructor(private formateurService: FormateurService) {}
   ngOnInit(): void {
+    this.initFormateurs();
+  }
+
+  initFormateurs() {
     this.formateurService.getAll().subscribe((data: Formateur[]) => {
       this.formateurs = data;
+    });
+  }
+
+  delete(id: number) {
+    this.formateurService.delete(id).subscribe(() => {
+      this.initFormateurs();
     });
   }
 }
