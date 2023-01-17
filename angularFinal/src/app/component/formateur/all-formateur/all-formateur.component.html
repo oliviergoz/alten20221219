@@ -3,6 +3,7 @@
     <td>{{ formateur.id }}</td>
     <td>{{ formateur.prenom }}</td>
     <td>{{ formateur.nom }}</td>
+    <td>{{ formateur.dtNaiss | date : "dd/MM/yyyy" }}</td>
     <td>{{ formateur.adresse?.numero }}</td>
     <td>
       <a

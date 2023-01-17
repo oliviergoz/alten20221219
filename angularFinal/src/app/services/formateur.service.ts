@@ -37,6 +37,7 @@ export class FormateurService {
       email: formateur.email,
       interne: formateur.interne,
       cout: formateur.cout,
+      dtNaiss: formateur.dtNaiss,
     };
     if (formateur.adresse) {
       Object.assign(obj, {
