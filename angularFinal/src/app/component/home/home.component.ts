@@ -1,4 +1,3 @@
-import { DemoService } from './../../services/demo.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  constructor(private demoService: DemoService) {
-    console.log(this.demoService.sayHello());
-  }
+  constructor() {}
 }

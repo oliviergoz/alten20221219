@@ -20,7 +20,7 @@ public class SecurityConfig {
 					.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 					.and()
 		            .authorizeRequests()
-		            	.anyRequest().authenticated()
+		            	.anyRequest().permitAll()
 		            .and()	
 					.httpBasic()
 					.and()

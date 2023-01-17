@@ -11,6 +11,7 @@ import { FormationComponent } from './component/formation/formation/formation.co
 import { AllFormationComponent } from './component/formation/all-formation/all-formation.component';
 import { PathNotFoundComponent } from './component/path-not-found/path-not-found.component';
 import { MenuComponent } from './component/menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MenuComponent } from './component/menu/menu.component';
     PathNotFoundComponent,
     MenuComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes), HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
