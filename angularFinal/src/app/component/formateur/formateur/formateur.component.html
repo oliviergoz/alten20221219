@@ -12,6 +12,47 @@
     <input id="nom" [(ngModel)]="formateur.nom" class="form-control" />
   </div>
   <div class="form-group">
+    <label for="email">email:</label>
+    <input id="email" [(ngModel)]="formateur.email" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="dtNaiss">date naissance:</label>
+    <input
+      id="dtNaiss"
+      type="date"
+      [(ngModel)]="formateur.dtNaiss"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="adresse.numero">numero:</label>
+    <input
+      id="adresse.numero"
+      [(ngModel)]="adresse.numero"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="adresse.rue">rue:</label>
+    <input id="adresse.rue" [(ngModel)]="adresse.rue" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="adresse.codePostal">code postal:</label>
+    <input
+      id="adresse.codePostal"
+      [(ngModel)]="adresse.codePostal"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
+    <label for="adresse.ville">ville:</label>
+    <input
+      id="adresse.ville"
+      [(ngModel)]="adresse.ville"
+      class="form-control"
+    />
+  </div>
+  <div class="form-group">
     <button (click)="save()" class="btn btn-outline-primary">
       enregistrer
     </button>
