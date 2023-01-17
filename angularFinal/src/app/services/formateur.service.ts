@@ -1,3 +1,4 @@
+import { Formateur } from './../model/formateur';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,8 +9,8 @@ import { Observable } from 'rxjs';
 export class FormateurService {
   constructor(private httpClient: HttpClient) {}
 
-  public getAll(): Observable<any[]> {
-    return this.httpClient.get<any[]>(
+  public getAll(): Observable<Formateur[]> {
+    return this.httpClient.get<Formateur[]>(
       'http://localhost:8080/formation/api/formateur'
     );
   }

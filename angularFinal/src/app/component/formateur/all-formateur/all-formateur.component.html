@@ -1,1 +1,8 @@
-{{ formateurs }}
+<table class="table">
+  <tr *ngFor="let formateur of formateurs">
+    <td>{{ formateur.id }}</td>
+    <td>{{ formateur.prenom }}</td>
+    <td>{{ formateur.nom }}</td>
+    <td>{{ formateur.adresse?.numero }}</td>
+  </tr>
+</table>

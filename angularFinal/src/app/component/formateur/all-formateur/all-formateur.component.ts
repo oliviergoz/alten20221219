@@ -1,3 +1,4 @@
+import { Formateur } from './../../../model/formateur';
 import { FormateurService } from './../../../services/formateur.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-formateur.component.css'],
 })
 export class AllFormateurComponent implements OnInit {
-  formateurs: any[] = [];
+  formateurs: Formateur[] = [];
   constructor(private formateurService: FormateurService) {}
   ngOnInit(): void {
-    this.formateurService.getAll().subscribe((data: any[]) => {
+    this.formateurService.getAll().subscribe((data: Formateur[]) => {
       this.formateurs = data;
     });
   }
