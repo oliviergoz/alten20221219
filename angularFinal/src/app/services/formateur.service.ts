@@ -24,15 +24,40 @@ export class FormateurService {
   }
 
   public create(formateur: Formateur): Observable<Formateur> {
-    console.debug(formateur);
-    return this.httpClient.post<Formateur>(this.url, formateur);
+    return this.httpClient.post<Formateur>(
+      this.url,
+      this.formateurToJson(formateur)
+    );
+  }
+
+  public formateurToJson(formateur: Formateur): any {
+    let obj = {
+      prenom: formateur.prenom,
+      nom: formateur.nom,
+      email: formateur.email,
+      interne: formateur.interne,
+      cout: formateur.cout,
+    };
+    if (formateur.adresse) {
+      Object.assign(obj, {
+        adresse: {
+          numero: formateur.adresse.numero,
+          rue: formateur.adresse.rue,
+          codePostal: formateur.adresse.codePostal,
+          ville: formateur.adresse.ville,
+        },
+      });
+    }
+    if (formateur.id) {
+      Object.assign(obj, { id: formateur.id });
+    }
+    return obj;
   }
 
   public update(formateur: Formateur): Observable<Formateur> {
-    console.debug(formateur);
     return this.httpClient.put<Formateur>(
       `${this.url}/${formateur.id}`,
-      formateur
+      this.formateurToJson(formateur)
     );
   }
 }
