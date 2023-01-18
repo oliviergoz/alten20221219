@@ -1,3 +1,4 @@
+import { LoginComponent } from './component/login/login.component';
 import { FormationComponent } from './component/formation/formation/formation.component';
 import { FormateurComponent } from './component/formateur/formateur/formateur.component';
 import { AllFormateurComponent } from './component/formateur/all-formateur/all-formateur.component';
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'formateur/add', component: FormateurComponent },
   { path: 'formation/edit/:id', component: FormationComponent },
   { path: 'formation/add', component: FormationComponent },
+  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PathNotFoundComponent },
 ];

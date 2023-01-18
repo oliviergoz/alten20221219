@@ -18,18 +18,25 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import ajc.formation.alten.formation.jsonviews.Views;
+
 @Entity
 @Table(name = "compte")
 public class Compte implements UserDetails {
+	@JsonView(Views.Common.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotEmpty
 	@Column(name = "login", nullable = false, unique = true)
+	@JsonView(Views.Common.class)
 	private String login;
 	@NotEmpty
 	@Column(name = "password", nullable = false)
 	private String password;
+	@JsonView(Views.Common.class)
 	@Enumerated(EnumType.STRING)
 	private Role role;
 

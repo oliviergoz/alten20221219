@@ -1,9 +1,18 @@
 <nav>
   <a routerLink="/home" routerLinkActive="active" class="btn btn-link">home</a>
-  <a routerLink="/formation" routerLinkActive="active" class="btn btn-link"
-    >formation</a
-  >
-  <a routerLink="/formateur" routerLinkActive="active" class="btn btn-link"
-    >formateur</a
-  >
+  <ng-container *ngIf="!logged">
+    <a routerLink="/login" routerLinkActive="active" class="btn btn-link"
+      >login</a
+    >
+  </ng-container>
+  <ng-container *ngIf="logged">
+    <a routerLink="/formation" routerLinkActive="active" class="btn btn-link"
+      >formation</a
+    >
+    <a routerLink="/formateur" routerLinkActive="active" class="btn btn-link"
+      >formateur</a
+    >
+    <span>bonjour {{ login }}</span>
+    <button (click)="logout()" class="btn btn-link">logout</button>
+  </ng-container>
 </nav>

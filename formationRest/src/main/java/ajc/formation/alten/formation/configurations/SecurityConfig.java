@@ -2,6 +2,7 @@ package ajc.formation.alten.formation.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -20,7 +21,9 @@ public class SecurityConfig {
 					.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 					.and()
 		            .authorizeRequests()
-		            	.anyRequest().permitAll()
+		            	.antMatchers(HttpMethod.OPTIONS).permitAll()
+		            	.antMatchers(HttpMethod.GET).authenticated()
+		            	.anyRequest().hasRole("INTERNE")
 		            .and()	
 					.httpBasic()
 					.and()

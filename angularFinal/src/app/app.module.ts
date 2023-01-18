@@ -13,6 +13,7 @@ import { PathNotFoundComponent } from './component/path-not-found/path-not-found
 import { MenuComponent } from './component/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     AllFormationComponent,
     PathNotFoundComponent,
     MenuComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

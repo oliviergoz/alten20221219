@@ -1,0 +1,20 @@
+<div *ngIf="showError" class="alert alert-danger">informations incorrectes</div>
+<div>
+  <div class="form-group">
+    <label>login:<input [(ngModel)]="login" class="form-control" /></label>
+  </div>
+  <div class="form-group">
+    <label
+      >mot de passe:<input
+        type="password"
+        [(ngModel)]="password"
+        class="form-control"
+    /></label>
+  </div>
+  <div>
+    <button (click)="check()" class="btn btn-outline-primary">valider</button>
+    <a routerLink="/home" routerLinkActive="active" class="btn btn-link"
+      >annuler</a
+    >
+  </div>
+</div>
