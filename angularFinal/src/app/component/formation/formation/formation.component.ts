@@ -1,3 +1,4 @@
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Formateur } from './../../../model/formateur';
 import { Observable } from 'rxjs';
 import { FormateurService } from './../../../services/formateur.service';
@@ -19,6 +20,7 @@ export class FormationComponent implements OnInit {
     private formationSrv: FormationService,
     private formateurSrv: FormateurService,
     private activatedRoute: ActivatedRoute,
+    private authSrv: AuthenticationService,
     private router: Router
   ) {}
 

@@ -1,3 +1,4 @@
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Observable } from 'rxjs';
 import { Formation } from './../../../model/formation';
 import { FormationService } from './../../../services/formation.service';
@@ -19,11 +20,18 @@ export class AllFormationComponent implements OnInit {
 
   observableFormations!: Observable<Formation[]>;
 
-  constructor(private formationSrv: FormationService) {}
+  constructor(
+    private formationSrv: FormationService,
+    private authSrv: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
     this.observableFormations = this.formationSrv.getAll();
   }
 
   delete(id: number) {}
+
+  get interne() {
+    return this.authSrv.isInterne();
+  }
 }

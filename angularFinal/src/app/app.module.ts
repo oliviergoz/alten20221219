@@ -1,3 +1,4 @@
+import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
 import { routes } from './routes';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +12,7 @@ import { FormationComponent } from './component/formation/formation/formation.co
 import { AllFormationComponent } from './component/formation/all-formation/all-formation.component';
 import { PathNotFoundComponent } from './component/path-not-found/path-not-found.component';
 import { MenuComponent } from './component/menu/menu.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 
@@ -33,7 +34,13 @@ import { LoginComponent } from './component/login/login.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

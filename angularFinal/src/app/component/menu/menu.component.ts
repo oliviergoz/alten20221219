@@ -1,5 +1,6 @@
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/authentication.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,13 +8,12 @@ import { AuthenticationService } from 'src/app/authentication.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  constructor(private authSrv: AuthenticationService) {}
+  constructor(private authSrv: AuthenticationService, private router: Router) {}
 
   ngOnInit(): void {}
 
   get login(): string | undefined {
     if (this.authSrv.isAuthenticated()) {
-      console.log(localStorage.getItem('compte'));
       return JSON.parse(localStorage.getItem('compte')!).login;
     }
     return;
@@ -25,5 +25,6 @@ export class MenuComponent implements OnInit {
 
   logout() {
     localStorage.clear();
+    this.router.navigateByUrl('/home');
   }
 }

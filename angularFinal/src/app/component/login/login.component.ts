@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { AuthenticationService } from 'src/app/authentication.service';
+
+import { Compte } from 'src/app/model/compte';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,7 @@ export class LoginComponent {
 
   check() {
     this.authSrv.authentication(this.login, this.password).subscribe({
-      next: (compte) => {
+      next: (compte: Compte) => {
         this.showError = false;
         localStorage.setItem(
           'tokenId',

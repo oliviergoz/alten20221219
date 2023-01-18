@@ -6,6 +6,7 @@
     <td>{{ f.distanciel }}</td>
     <td>
       <a
+        *ngIf="interne"
         routerLink="/formation/edit/{{ f.id }}"
         routerLinkActive="active"
         class="btn btn-outline-primary"
@@ -13,12 +14,20 @@
       >
     </td>
     <td>
-      <button (click)="delete(f.id!)" class="btn btn-outline-danger">
+      <button
+        *ngIf="interne"
+        (click)="delete(f.id!)"
+        class="btn btn-outline-danger"
+      >
         supprimer
       </button>
     </td>
   </tr>
 </table>
-<a routerLink="/formation/add" routerLinkActive="active" class="btn btn-link"
+<a
+  *ngIf="interne"
+  routerLink="/formation/add"
+  routerLinkActive="active"
+  class="btn btn-link"
   >nouvelle formation</a
 >

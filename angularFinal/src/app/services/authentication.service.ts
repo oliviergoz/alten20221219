@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Compte } from '../model/compte';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +21,13 @@ export class AuthenticationService {
 
   public isAuthenticated(): boolean {
     return localStorage.getItem('tokenId') != null ? true : false;
+  }
+
+  public isInterne(): boolean {
+    if (localStorage.getItem('compte') != null) {
+      let compte: Compte = JSON.parse(localStorage.getItem('compte')!);
+      return compte.role == 'ROLE_INTERNE';
+    }
+    return false;
   }
 }
