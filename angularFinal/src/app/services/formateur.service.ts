@@ -1,3 +1,4 @@
+import { ConvertToJsonService } from './convert-to-json.service';
 import { Formateur } from './../model/formateur';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -9,7 +10,10 @@ import { Observable } from 'rxjs';
 export class FormateurService {
   private url: string = 'http://localhost:8080/formation/api/formateur';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private convert: ConvertToJsonService
+  ) {}
 
   public getAll(): Observable<Formateur[]> {
     return this.httpClient.get<Formateur[]>(this.url);
@@ -26,39 +30,14 @@ export class FormateurService {
   public create(formateur: Formateur): Observable<Formateur> {
     return this.httpClient.post<Formateur>(
       this.url,
-      this.formateurToJson(formateur)
+      this.convert.formateurToJson(formateur)
     );
-  }
-
-  public formateurToJson(formateur: Formateur): any {
-    let obj = {
-      prenom: formateur.prenom,
-      nom: formateur.nom,
-      email: formateur.email,
-      interne: formateur.interne,
-      cout: formateur.cout,
-      dtNaiss: formateur.dtNaiss,
-    };
-    if (formateur.adresse) {
-      Object.assign(obj, {
-        adresse: {
-          numero: formateur.adresse.numero,
-          rue: formateur.adresse.rue,
-          codePostal: formateur.adresse.codePostal,
-          ville: formateur.adresse.ville,
-        },
-      });
-    }
-    if (formateur.id) {
-      Object.assign(obj, { id: formateur.id });
-    }
-    return obj;
   }
 
   public update(formateur: Formateur): Observable<Formateur> {
     return this.httpClient.put<Formateur>(
       `${this.url}/${formateur.id}`,
-      this.formateurToJson(formateur)
+      this.convert.formateurToJson(formateur)
     );
   }
 }

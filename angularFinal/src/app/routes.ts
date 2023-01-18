@@ -12,7 +12,8 @@ export const routes: Routes = [
   { path: 'formateur', component: AllFormateurComponent },
   { path: 'formateur/edit/:id', component: FormateurComponent },
   { path: 'formateur/add', component: FormateurComponent },
-  { path: 'formation/:id', component: FormationComponent },
+  { path: 'formation/edit/:id', component: FormationComponent },
+  { path: 'formation/add', component: FormationComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PathNotFoundComponent },
 ];

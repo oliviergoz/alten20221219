@@ -1,1 +1,53 @@
-<p>formation works!</p>
+<div>
+  <div class="form-group">
+    <label for="id">id:</label>
+    <input id="id" [(ngModel)]="formation.id" readonly class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="libelle">libelle:</label>
+    <input id="libelle" [(ngModel)]="formation.libelle" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="description">description:</label>
+    <textarea
+      id="description"
+      [(ngModel)]="formation.description"
+      class="form-control"
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="distanciel">distanciel:</label>
+    <input
+      type="checkbox"
+      id="distanciel"
+      [(ngModel)]="formation.distanciel"
+      class="form-check-input"
+    />
+  </div>
+  <div>
+    <label for="referent">referent:</label>
+    <select
+      class="form-control"
+      [(ngModel)]="formation.referent"
+      [compareWith]="compareFormateurById"
+    >
+      <option
+        *ngFor="let formateur of obsFormateurs | async"
+        [ngValue]="formateur"
+      >
+        {{ formateur.id }} {{ formateur.prenom }} {{ formateur.nom }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button (click)="save()" class="btn btn-outline-primary">
+      enregistrer
+    </button>
+    <a
+      routerLink="/formation"
+      routerLinkActive="active"
+      class="btn btn-outline-warning"
+      >annuler</a
+    >
+  </div>
+</div>

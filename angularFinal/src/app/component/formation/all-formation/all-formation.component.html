@@ -1,1 +1,24 @@
-<p>all-formation works!</p>
+<table class="table">
+  <tr *ngFor="let f of observableFormations | async">
+    <td>{{ f.id }}</td>
+    <td>{{ f.libelle }}</td>
+    <td>{{ f.referent?.prenom }} {{ f.referent?.nom }}</td>
+    <td>{{ f.distanciel }}</td>
+    <td>
+      <a
+        routerLink="/formation/edit/{{ f.id }}"
+        routerLinkActive="active"
+        class="btn btn-outline-primary"
+        >editer</a
+      >
+    </td>
+    <td>
+      <button (click)="delete(f.id!)" class="btn btn-outline-danger">
+        supprimer
+      </button>
+    </td>
+  </tr>
+</table>
+<a routerLink="/formation/add" routerLinkActive="active" class="btn btn-link"
+  >nouvelle formation</a
+>
