@@ -1,6 +1,6 @@
 import { ConvertToJsonService } from './convert-to-json.service';
 import { Formateur } from './../model/formateur';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -16,6 +16,10 @@ export class FormateurService {
   ) {}
 
   public getAll(): Observable<Formateur[]> {
+    // let headers = new HttpHeaders({
+    //   Authorization: 'Basic ' + window.btoa('toto:toto'),
+    // });
+
     return this.httpClient.get<Formateur[]>(this.url);
   }
 
