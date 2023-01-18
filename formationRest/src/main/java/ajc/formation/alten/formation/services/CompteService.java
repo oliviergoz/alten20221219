@@ -25,11 +25,20 @@ public class CompteService {
 		return compteRepo.findByLogin(login).orElseThrow(CompteException::new);
 	}
 
-	public Compte create(Compte compte) {
+	public Compte createUser(Compte compte) {
 		if (!validator.validate(compte).isEmpty()) {
 			throw new CompteException();
 		}
 		compte.setRole(Role.ROLE_USER);
+		compte.setPassword(passwordEncoder.encode(compte.getPassword()));
+		return compteRepo.save(compte);
+	}
+	
+	public Compte createInterne(Compte compte) {
+		if (!validator.validate(compte).isEmpty()) {
+			throw new CompteException();
+		}
+		compte.setRole(Role.ROLE_INTERNE);
 		compte.setPassword(passwordEncoder.encode(compte.getPassword()));
 		return compteRepo.save(compte);
 	}

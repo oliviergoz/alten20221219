@@ -22,8 +22,8 @@ class FormationApplicationTests {
 	@Test
 	@Disabled
 	void initCompte() {
-		compteSrv.create(new Compte("interne", "interne", Role.ROLE_INTERNE));
-		compteSrv.create(new Compte("user1", "user1", Role.ROLE_USER));
+		compteSrv.createUser(new Compte("interne", "interne", null));
+		compteSrv.createInterne(new Compte("user1", "user1",null));
 	}
 
 }
