@@ -16,4 +16,15 @@ export class CompteService {
       compte
     );
   }
+
+  public checkLoginExist(login: string): Observable<boolean> {
+    if (login) {
+      return this.httpClient.get<boolean>(
+        `http://localhost:8080/formation/api/compte/checklogin/${login}`
+      );
+    }
+    return new Observable((observer) => {
+      observer.next(false);
+    });
+  }
 }

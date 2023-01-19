@@ -30,7 +30,7 @@ public class CompteService {
 			throw new CompteException();
 		}
 		compte.setRole(Role.ROLE_USER);
-		compte.setPassword(passwordEncoder.encode(compte.getPasswd())); //Mmm1=>?????????????????????????????????????????? plus de 20 caracteres
+		compte.setPassword(passwordEncoder.encode(compte.getPasswd())); 
 		return compteRepo.save(compte);
 	}
 	
@@ -41,5 +41,9 @@ public class CompteService {
 		compte.setRole(Role.ROLE_INTERNE);
 		compte.setPassword(passwordEncoder.encode(compte.getPassword()));
 		return compteRepo.save(compte);
+	}
+	
+	public boolean loginExist(String login) {
+		return compteRepo.findByLogin(login).isPresent();
 	}
 }

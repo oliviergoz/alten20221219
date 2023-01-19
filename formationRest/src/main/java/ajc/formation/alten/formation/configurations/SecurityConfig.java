@@ -22,6 +22,7 @@ public class SecurityConfig {
 					.and()
 		            .authorizeRequests()
 		            	.antMatchers(HttpMethod.POST,"/api/inscription").anonymous()
+		            	.antMatchers(HttpMethod.GET,"/api/compte/checklogin/**").permitAll()
 		            	.antMatchers(HttpMethod.OPTIONS).permitAll()
 		            	.antMatchers(HttpMethod.GET).authenticated()
 		            	.anyRequest().hasRole("INTERNE")

@@ -1,3 +1,4 @@
+import { CompteService } from './../../../services/compte.service';
 import { CustomValidator } from './../../../validators/custom-validator';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -10,8 +11,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormulaireCodeComponent implements OnInit {
   form!: FormGroup;
 
+  constructor(private compteSrv: CompteService) {}
+
   ngOnInit(): void {
     this.form = new FormGroup({
+      login: new FormControl(
+        '',
+        undefined,
+        CustomValidator.checkLogin(this.compteSrv)
+      ),
       prenom: new FormControl('', Validators.required),
       nom: new FormControl('', [
         Validators.required,
@@ -20,10 +28,13 @@ export class FormulaireCodeComponent implements OnInit {
         CustomValidator.pasChaineToto,
         CustomValidator.pasChaine('tutu'),
       ]),
-      group: new FormGroup({
-        control1: new FormControl(),
-        control2: new FormControl(),
-      }),
+      group: new FormGroup(
+        {
+          control1: new FormControl(),
+          control2: new FormControl(),
+        },
+        CustomValidator.pasEgaux
+      ),
     });
   }
 

@@ -1,5 +1,11 @@
 <form (ngSubmit)="submit()" [formGroup]="form">
   <div>
+    login: <input formControlName="login" />
+    <span *ngIf="form.get('login')?.dirty && form.get('login')?.invalid"
+      >*probleme login</span
+    >
+  </div>
+  <div>
     prenom: <input formControlName="prenom" />
     <span *ngIf="form.get('prenom')?.dirty && form.get('prenom')?.invalid"
       >*probleme prenom</span
