@@ -1,3 +1,4 @@
+import { Compte } from './../model/compte';
 import { Formation } from './../model/formation';
 import { Formateur } from './../model/formateur';
 import { Injectable } from '@angular/core';

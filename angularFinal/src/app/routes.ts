@@ -1,3 +1,4 @@
+import { InscriptionComponent } from './component/inscription/inscription.component';
 import { InterneGuardService } from './services/guards/interne-guard.service';
 import { AuthenticatedGuardService } from './services/guards/authenticated-guard.service';
 import { LoginComponent } from './component/login/login.component';
@@ -45,6 +46,11 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [AnonymousGuardService],
+  },
+  {
+    path: 'inscription',
+    component: InscriptionComponent,
     canActivate: [AnonymousGuardService],
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

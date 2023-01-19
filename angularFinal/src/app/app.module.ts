@@ -15,6 +15,9 @@ import { MenuComponent } from './component/menu/menu.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
+import { InscriptionComponent } from './component/inscription/inscription.component';
+import { FormulaireTemplateComponent } from './component/formulaire/formulaire-template/formulaire-template.component';
+import { FormulaireCodeComponent } from './component/formulaire/formulaire-code/formulaire-code.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { LoginComponent } from './component/login/login.component';
     PathNotFoundComponent,
     MenuComponent,
     LoginComponent,
+    InscriptionComponent,
+    FormulaireTemplateComponent,
+    FormulaireCodeComponent,
   ],
   imports: [
     BrowserModule,
