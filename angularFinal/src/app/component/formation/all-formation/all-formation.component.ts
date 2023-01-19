@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Observable } from 'rxjs';
 import { Formation } from './../../../model/formation';
@@ -19,13 +20,22 @@ export class AllFormationComponent implements OnInit {
   // }
 
   observableFormations!: Observable<Formation[]>;
+  message = '';
 
   constructor(
     private formationSrv: FormationService,
-    private authSrv: AuthenticationService
+    private authSrv: AuthenticationService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe((queryParams) => {
+      if (queryParams['update']) {
+        this.message = `update de la formation ${queryParams['update']}`;
+      } else if (queryParams['create']) {
+        this.message = `creation de la formation ${queryParams['create']}`;
+      }
+    });
     this.observableFormations = this.formationSrv.getAll();
   }
 

@@ -39,12 +39,12 @@ export class FormationComponent implements OnInit {
 
   save() {
     if (this.formation.id) {
-      this.formationSrv.update(this.formation).subscribe((formateur) => {
-        this.router.navigateByUrl('/formation');
+      this.formationSrv.update(this.formation).subscribe((formation) => {
+        this.router.navigateByUrl('/formation?update=' + formation.id);
       });
     } else {
-      this.formationSrv.create(this.formation).subscribe((formateur) => {
-        this.router.navigateByUrl('/formation');
+      this.formationSrv.create(this.formation).subscribe((formation) => {
+        this.router.navigateByUrl('/formation?create=' + formation.id);
       });
     }
   }

@@ -32,6 +32,13 @@ export class CustomValidator {
       : null;
   }
 
+  public static egaux(control: AbstractControl): ValidationErrors | null {
+    let group = control as FormGroup;
+    return control.get('password')?.value != group.get('confirm')?.value
+      ? { pasegaux: true }
+      : null;
+  }
+
   public static checkLogin(compteSrv: CompteService): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
       return compteSrv.checkLoginExist(control.value).pipe(

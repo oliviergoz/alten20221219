@@ -1,1 +1,52 @@
-<p>inscription works!</p>
+<form (ngSubmit)="save()" [formGroup]="form">
+  <div class="form-group">
+    <label>login:<input class="form-control" formControlName="login" /></label>
+    <span *ngIf="form.get('login')?.dirty && form.get('login')?.invalid"
+      >*probleme login</span
+    >
+  </div>
+  <ng-container formGroupName="passwordGroup">
+    <div>
+      <label
+        >mot de passe:<input
+          type="password"
+          class="form-control"
+          formControlName="password"
+      /></label>
+      <span
+        *ngIf="
+          form.get('passwordGroup.password')?.dirty &&
+          form.get('passwordGroup.password')?.invalid
+        "
+        >*probleme mot de passe</span
+      >
+    </div>
+    <div>
+      <label
+        >confirmation:<input
+          type="password"
+          class="form-control"
+          formControlName="confirm"
+      /></label>
+      <span
+        *ngIf="
+          form.get('passwordGroup.password')?.valid &&
+          form.get('passwordGroup')?.invalid
+        "
+        >*probleme confirmation</span
+      >
+    </div>
+  </ng-container>
+  <div>
+    <button
+      type="submit"
+      class="btn btn-outline-primary"
+      [disabled]="form.invalid"
+    >
+      enregistrer
+    </button>
+    <a routerLink="/home" routerLinkActive="active" class="btn btn-link"
+      >annuler</a
+    >
+  </div>
+</form>

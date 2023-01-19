@@ -1,5 +1,5 @@
-import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 import { Compte } from 'src/app/model/compte';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -9,12 +9,26 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   login = '';
   password = '';
   showError = false;
+  showMessage = false;
 
-  constructor(private authSrv: AuthenticationService, private router: Router) {}
+  constructor(
+    private authSrv: AuthenticationService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
+  ngOnInit(): void {
+    this.showMessage = false;
+    this.activatedRoute.queryParams.subscribe((queryParams) => {
+      console.log(queryParams);
+      if (queryParams['inscription']) {
+        this.showMessage = true;
+      }
+    });
+  }
 
   check() {
     this.authSrv.authentication(this.login, this.password).subscribe({
