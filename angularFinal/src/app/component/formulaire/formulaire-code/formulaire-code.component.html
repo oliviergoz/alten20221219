@@ -1,1 +1,30 @@
-<p>formulaire-code works!</p>
+<form (ngSubmit)="submit()" [formGroup]="form">
+  <div>
+    prenom: <input formControlName="prenom" />
+    <span *ngIf="form.get('prenom')?.dirty && form.get('prenom')?.invalid"
+      >*probleme prenom</span
+    >
+  </div>
+  <div>
+    nom:<input formControlName="nom" />
+    <ng-container *ngIf="form.get('nom')?.dirty && form.get('nom')?.invalid">
+      <span *ngIf="form.get('nom')?.hasError('required')">*obligatoire</span>
+      <span
+        *ngIf="
+          form.get('nom')?.hasError('minlength') ||
+          form.get('nom')?.hasError('maxlength')
+        "
+        >entre 2 et 20 caracteres</span
+      >
+      <span *ngIf="form.get('nom')?.hasError('toto')">*toto interdit</span>
+      <span *ngIf="form.get('nom')?.hasError('chaineInterdite')"
+        >*chaine interdite</span
+      >
+    </ng-container>
+  </div>
+  <ng-container formGroupName="group">
+    <div>control1:<input formControlName="control1" /></div>
+    <div>control2:<input formControlName="control2" /></div>
+  </ng-container>
+  <button type="submit" [disabled]="form.invalid">envoyer</button>
+</form>

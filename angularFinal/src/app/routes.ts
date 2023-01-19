@@ -1,3 +1,5 @@
+import { FormulaireCodeComponent } from './component/formulaire/formulaire-code/formulaire-code.component';
+import { FormulaireTemplateComponent } from './component/formulaire/formulaire-template/formulaire-template.component';
 import { InscriptionComponent } from './component/inscription/inscription.component';
 import { InterneGuardService } from './services/guards/interne-guard.service';
 import { AuthenticatedGuardService } from './services/guards/authenticated-guard.service';
@@ -53,6 +55,7 @@ export const routes: Routes = [
     component: InscriptionComponent,
     canActivate: [AnonymousGuardService],
   },
+  { path: 'formulaire', component: FormulaireCodeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PathNotFoundComponent },
 ];

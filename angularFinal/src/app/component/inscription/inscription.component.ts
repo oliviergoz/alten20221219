@@ -9,11 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class InscriptionComponent implements OnInit {
   constructor(private compteSrv: CompteService) {}
 
-  ngOnInit(): void {
-    this.compteSrv
-      .inscription({ login: 'aaa', passwd: 'Aaa1' })
-      .subscribe((compte) => {
-        console.log(compte);
-      });
-  }
+  ngOnInit(): void {}
+
+  save() {}
 }
