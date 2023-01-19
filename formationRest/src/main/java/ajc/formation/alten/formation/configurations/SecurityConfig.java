@@ -21,6 +21,7 @@ public class SecurityConfig {
 					.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 					.and()
 		            .authorizeRequests()
+		            	.antMatchers(HttpMethod.POST,"/api/inscription").anonymous()
 		            	.antMatchers(HttpMethod.OPTIONS).permitAll()
 		            	.antMatchers(HttpMethod.GET).authenticated()
 		            	.anyRequest().hasRole("INTERNE")

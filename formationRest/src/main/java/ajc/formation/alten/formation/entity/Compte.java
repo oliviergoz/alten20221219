@@ -12,7 +12,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -33,12 +35,15 @@ public class Compte implements UserDetails {
 	@Column(name = "login", nullable = false, unique = true)
 	@JsonView(Views.Common.class)
 	private String login;
-	@NotEmpty
 	@Column(name = "password", nullable = false)
 	private String password;
 	@JsonView(Views.Common.class)
 	@Enumerated(EnumType.STRING)
 	private Role role;
+	@NotEmpty
+	@Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{4,20}$")
+	@Transient
+	private String passwd;
 
 	public Compte() {
 
@@ -82,6 +87,14 @@ public class Compte implements UserDetails {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public String getPasswd() {
+		return passwd;
+	}
+
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
 
 	@Override
