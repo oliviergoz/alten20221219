@@ -1,0 +1,4 @@
+oracle.username=OWEB
+oracle.password=
+oracle.url=jdbc:oracle:thin:@//10.100.31.7:1521/DEV01
+owlinkweb1.url=http://localhost:8081/#!

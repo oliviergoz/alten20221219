@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository-1.7.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- Enable @AspectJ annotation support -->
+	<aop:aspectj-autoproxy />
+
+	<context:component-scan
+		base-package="com.owliance.owlink.service, com.owliance.owlink.service.impl, com.owliance.owlink.exception, com.owliance.owlink.jdbcrepository, com.owliance.owlink.service.soap, com.owliance.owlink.aspect" />
+
+</beans>

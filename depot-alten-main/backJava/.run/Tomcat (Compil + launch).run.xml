@@ -1,0 +1,96 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Tomcat (Compil + launch)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.60" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/owlink-access" />
+    <deployment>
+      <artifact name="owlink-access:war exploded">
+        <settings>
+          <option name="CONTEXT_PATH" value="/owlink-access" />
+        </settings>
+      </artifact>
+    </deployment>
+    <server-settings>
+      <option name="BASE_DIRECTORY_NAME" value="6117c356-08be-4b30-bf49-6ff6f4a0c3e5" />
+    </server-settings>
+    <predefined_log_file enabled="true" id="Tomcat" />
+    <predefined_log_file enabled="true" id="Tomcat Catalina" />
+    <predefined_log_file id="Tomcat Manager" />
+    <predefined_log_file id="Tomcat Host Manager" />
+    <predefined_log_file id="Tomcat Localhost Access" />
+    <RunnerSettings RunnerId="Debug">
+      <option name="DEBUG_PORT" value="64410" />
+    </RunnerSettings>
+    <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+      <option name="USE_ENV_VARIABLES" value="true" />
+      <STARTUP>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </STARTUP>
+      <SHUTDOWN>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </SHUTDOWN>
+    </ConfigurationWrapper>
+    <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+      <option name="USE_ENV_VARIABLES" value="true" />
+      <STARTUP>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </STARTUP>
+      <SHUTDOWN>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </SHUTDOWN>
+      <EnvironmentVariables>
+        <option name="NAME" value="SPRING_CONFIG_LOCATION" />
+        <option name="VALUE" value="classpath:/application.properties,file:///$PROJECT_DIR$/client.properties" />
+        <option name="IS_PREDEFINED" value="false" />
+      </EnvironmentVariables>
+    </ConfigurationWrapper>
+    <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+      <option name="USE_ENV_VARIABLES" value="true" />
+      <STARTUP>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </STARTUP>
+      <SHUTDOWN>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </SHUTDOWN>
+    </ConfigurationWrapper>
+    <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+      <option name="USE_ENV_VARIABLES" value="true" />
+      <STARTUP>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </STARTUP>
+      <SHUTDOWN>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </SHUTDOWN>
+      <EnvironmentVariables>
+        <option name="NAME" value="SPRING_CONFIG_LOCATION" />
+        <option name="VALUE" value="classpath:/application.properties,file:///$PROJECT_DIR$/client.properties" />
+        <option name="IS_PREDEFINED" value="false" />
+      </EnvironmentVariables>
+    </ConfigurationWrapper>
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Compilation fast" run_configuration_type="MavenRunConfiguration" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping wildcard="true" map-null="false" stop-on-errors="false">
+        <class-a>com.owliance.owlink.vo.ActeRemboursementVO
+        </class-a>
+        <class-b>com.owliance.owlink.bvo.ActeRemboursementBVO
+        </class-b>
+        <field>
+            <a>risque.id.idRisque</a>
+            <b>idRisque</b>
+        </field>
+        <field>
+            <a>option.id.idOrganisme</a>
+            <b>idOrganisme</b>
+        </field>
+        <field>
+            <a>regroupement.id.idRegroupement</a>
+            <b>idRegroupement</b>
+        </field>
+        <field>
+            <a>piecesJustificatives.id</a>
+            <b>idPiecesJustificative</b>
+        </field>
+    </mapping>
+
+</mappings>
+

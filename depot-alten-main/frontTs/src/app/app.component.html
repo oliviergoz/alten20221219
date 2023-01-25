@@ -1,0 +1,10 @@
+<ngx-loading-bar></ngx-loading-bar>
+<app-header *ngIf="accessIframe !== true"></app-header>
+<app-sidebar-left *ngIf="accessIframe !== true"></app-sidebar-left>
+<div id="main" role="main" class="content row">
+  <router-outlet>
+    <app-rgpd-footer class="row padding-top-10"></app-rgpd-footer>
+  </router-outlet>
+</div>
+<app-footer *ngIf="accessIframe !== true"></app-footer>
+<simple-notifications [options]="options"></simple-notifications>

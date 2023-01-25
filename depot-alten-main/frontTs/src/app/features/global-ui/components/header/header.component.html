@@ -1,0 +1,132 @@
+<header id="header">
+  <div id="logo-group">
+
+    <span class="logo-owlink"><a (click)="goToDashboard()"> <img alt="owlink-web" id="logo"
+                                                    src="assets/images/logoOwlinkByTessiBleu.png"></a></span>
+    <div class="ajax-dropdown">
+      <div class="btn-group btn-group-justified" data-toggle="buttons">
+        <label class="btn btn-default"> <input type="radio" name="activity" id="ajax/notify/mail.html"> Msgs
+          (14)
+        </label> <label class="btn btn-default"> <input type="radio" name="activity" id="ajax/notify/notifications.html">
+        notify (3)
+      </label> <label class="btn btn-default"> <input type="radio" name="activity" id="ajax/notify/tasks.html">
+        Tasks (4)
+      </label>
+      </div>
+      <div class="ajax-notifications custom-scroll">
+        <div class="alert alert-transparent">
+          <h4>Click a button to show messages here</h4>
+          This blank page message helps protect your privacy, or you can show the first message here automatically.
+        </div>
+        <em class="fa fa-lock fa-4x fa-border"></em>
+      </div>
+      <!-- end notification content -->
+    </div>
+    <!-- END AJAX-DROPDOWN -->
+  </div>
+
+  <!-- projects dropdown -->
+
+  <!--<sa-recent-projects></sa-recent-projects>-->
+
+  <div class="pull-right">
+
+    <!--<sa-collapse-menu></sa-collapse-menu>-->
+
+    <!-- collapse menu button -->
+    <div id="hide-menu" class="btn-header pull-right">
+			<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><em
+        class="fa fa-reorder"></em></a>
+			</span>
+    </div>
+    <!-- end collapse menu -->
+
+    <!-- #MOBILE -->
+    <!-- Top menu profile link : this shows only when top menu is active -->
+    <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+      <li class="">
+        <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+          <img src="assets/img/avatars/sunny.png" alt="John Doe" class="online"/>
+        </a>
+        <ul class="dropdown-menu pull-right">
+          <li>
+            <a (click)="(null)" class="padding-10 padding-top-0 padding-bottom-0"><em
+                    class="fa fa-cog"></em> Setting</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a routerLink="/app-views/profile" class="padding-10 padding-top-0 padding-bottom-0"> <em
+                    class="fa fa-user"></em>
+              <u>P</u>rofile</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a (click)="(null)" class="padding-10 padding-top-0 padding-bottom-0"
+               data-action="toggleShortcut"><em class="fa fa-arrow-down"></em> <u>S</u>hortcut</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a (click)="(null)" class="padding-10 padding-top-0 padding-bottom-0"
+               data-action="launchFullscreen"><em class="fa fa-arrows-alt"></em> Full <u>S</u>creen</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a routerLink="/auth/login" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><em
+                    class="fa fa-sign-out fa-lg"></em> <strong><u>L</u>ogout</strong></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- logout button -->
+    <sa-logout></sa-logout>
+    <!-- end logout button -->
+    <div id="msg" class="btn-header  pull-right">
+          <span>   <a (click)="popupmessage()" href="" title="Message" ><em class="fa fa-comment" ></em></a>
+			</span>
+    </div>
+
+    <!-- search mobile button (this is hidden till mobile view port) -->
+    <div id="search-mobile" class="btn-header transparent pull-right">
+      <span> <a (click)="toggleSearchMobile()" title="Search"><em class="fa fa-search"></em></a> </span>
+    </div>
+    <!-- end search mobile button -->
+
+    <!-- input: search field -->
+    <form #searchForm="ngForm" (ngSubmit)="onSubmit()" class="header-search pull-right">
+      <input id="search-fld" type="text" name="param" required
+             placeholder="{{'com.owliance.owlink.header.search.placeholder' | translate }}">
+      <button type="submit">
+        <em class="fa fa-search"></em>
+      </button>
+      <a id="cancel-search-js" (click)="toggleSearchMobile()" title="Cancel Search"><em class="fa fa-times"></em></a>
+    </form>
+    <!-- end input: search field -->
+
+    <!-- fullscreen button
+    <sa-full-screen></sa-full-screen>-->
+    <!-- end fullscreen button -->
+
+    <!-- #Voice Command: Start Speech
+    <sa-speech-button></sa-speech-button> -->
+    <!-- end voice command -->
+
+    <!-- multiple lang dropdown : find all flags in the flags page -->
+    <ul class="header-dropdown-list hidden-xs">
+      <li><a href="" class="dropdown-toggle" data-toggle="dropdown"> <img src="assets/img/blank.gif" class="flag flag-fr"
+                                                                          alt="France">&nbsp;<span>&nbsp;Français (FR)&nbsp;</span> <em class="fa fa-angle-down"></em>
+      </a>
+        <ul class="dropdown-menu pull-right">
+          <li class="{'active': language()=='fr_FR'}" (click)="switchLanguage('en_US')"><a
+            href="javascript:void(0);"> <img src="assets/img/blank.gif" class="flag flag-us" alt="United States"> English
+            (US)
+          </a></li>
+          <li class="{'active': language()=='en_US'}" (click)="switchLanguage('fr_FR')"><a
+            href="javascript:void(0);"><img src="assets/img/blank.gif" class="flag flag-fr" alt="France"> Français</a></li>
+        </ul></li>
+    </ul>
+    <!-- end multiple lang -->
+  </div>
+  <!-- end pulled right: nav area -->
+
+</header>

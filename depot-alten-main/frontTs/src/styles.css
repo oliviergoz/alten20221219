@@ -1,0 +1,1159 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700");
+@import "../src/assets/css/main.css";
+@import "../src/assets/css/css-toggle-switch.css";
+@import "../src/assets/css/smartadmin-ngx-datatable.css";
+@import "../src/assets/css/datatable.css";
+@import "../src/assets/css/smartadmin-angular-next.css";
+@import "../src/assets/css/wizard.css";
+@import "../src/assets/css/smartadmin-production.min.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../src/assets/css/ui-tabview.css";
+
+/*Setting the z-index backdrop to synchronise between menu, pop , popup and notifications*/
+.modal {
+    z-index: 905 !important;
+}
+/*Setting the z-index backdrop to synchronise between menu, pop , popup and notifications*/
+.modal-backdrop {
+    z-index: 900 !important;
+}
+
+.next a {
+    background-color: #6e587a !important;
+    color: white !important;
+}
+
+.finish a {
+    background-color: #6e587a !important;
+    color: white !important;
+}
+
+.previous a {
+    background-color: #6e587a !important;
+    color: white !important;
+}
+
+ul.nav-wizard li.active a, ul.nav-wizard li.active a:active, ul.nav-wizard li.active a:visited, ul.nav-wizard li.active a:focus {
+    background: #6e587a !important;
+}
+
+ul.nav-wizard .active ~ li a, ul.nav-wizard .active ~ li a:active, ul.nav-wizard .active ~ li a:visited, ul.nav-wizard .active ~ li a:focus {
+    background: #9a99bd;
+}
+
+.label {
+    color: #404040 !important;
+}
+
+
+
+#logo {
+    height: 45px;
+    width: 81px;
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 80px;
+}
+
+.btn-primary {
+    color: #fff;
+    margin: 5px;
+}
+
+.btn {
+    margin: 1px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #739e73;
+    border-color: #739e73;
+}
+
+.black-color {
+    color: #000000;
+}
+
+a:not([href]):not([tabindex]):not(.custom-hyperlink):not(.ui-datepicker-next):not(.ui-corner-all):not(.ui-treetable-toggler) {
+    color: white;
+}
+
+.ui-datepicker-next .ui-corner-all {
+    color: gray;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #a90329 !important;
+    border-color: #a90329 !important;
+}
+
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+    background-color: #aaa2d1;
+    color: #ffffff;
+}
+
+body .ui-table .ui-table-tbody > tr:nth-child(even).ui-state-highlight {
+    background-color: #abb9d3 !important;
+    color: #ffffff;
+}
+
+body .ui-table .ui-table-tbody > tr.ui-state-highlight:not(.dateFinElement) {
+    background-color: #abb9d3 !important;
+    color: #ffffff;
+}
+
+.panel-default > .panel-heading {
+    color: #fff;
+    background-color: #aaa2d1;
+    border-color: #ddd;
+}
+
+.theme-green .bs-datepicker-body table td.week span {
+    color: #6e587a;
+}
+
+.theme-green .bs-datepicker-head {
+    background-color: #aaa2d1;
+}
+
+.rowSlected {
+    background-color: #abb9d3 !important;
+    color: #ffffff;
+}
+
+.rowUnSelectPaire {
+    background-color: inherit;
+    border: 1px solid #c8c8c8;
+}
+
+.content {
+    top: -4em;
+    padding: 2em !important;
+}
+
+#sparks {
+    margin-top: 7px;
+}
+
+.jarviswidget-color-purple .nav-tabs li:not(.active) :not(.black-color) a,
+.jarviswidget-color-purple > header > .jarviswidget-ctrls a {
+    color: #fff !important;
+}
+
+.jarviswidget-color-purple .nav-tabs li:not(.active):not(.disabled):hover a {
+    color: #555 !important;
+}
+
+.jarviswidget-color-purple .nav-tabs li.disabled {
+    opacity: 0.3;
+    cursor: auto;
+}
+
+.jarviswidget-width-99 {
+    width: 99%;
+}
+
+.smart-form a,
+.smart-form button,
+.smart-form .btn,
+.smart-form div.label {
+    padding: 3px 14px !important;
+}
+
+.smart-form .well:focus-within {
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+    z-index: 906;
+}
+
+.smart-form .well {
+    margin-bottom: 10px !important;
+    background: #f1f1f1;
+    padding: 0;
+}
+
+.smart-form header {
+    padding: 1px 0 0;
+    margin: 0 10px 0;
+    background: transparent;
+}
+
+.smart-form header .title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+section.row {
+    margin-bottom: 10px !important;
+}
+
+section.row.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.width-100 {
+    width: 100%
+}
+
+.smart-form footer button,
+.smart-form footer .btn {
+    padding: 0 20px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.checkbox.btn {
+    border: none;
+    box-shadow: none
+}
+
+.smart-form .input input,
+.smart-form .ui-select-container,
+.smart-form .ui-select-container .form-control,
+.smart-form .select select {
+    height: 25px !important;
+}
+
+.input-group-addon {
+    padding: 4px 8px;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 4px 8px;
+    font-size: 11px;
+}
+
+.modal-header {
+    padding: 5px;
+}
+
+.smart-form .icon-append,
+.smart-form .icon-prepend {
+    top: 2px;
+    height: 21px;
+}
+
+.smart-form .select i {
+    top: 8px;
+    box-shadow: 0 0 0 5px #fff;
+}
+
+.btns-action-decompte li {
+    float: right;
+    margin-right: 5px;
+}
+
+.smart-form .help-block {
+    font-size: 11px;
+    font-style: italic;
+}
+
+.actsGridTable {
+    height: 200px;
+}
+
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 1230px;
+        position: relative;
+        top: 20% !important;
+    }
+}
+
+.modal-lg-2 {
+    width: 1230px;
+    position: relative;
+    top: 10% !important;
+}
+
+.modal-lg-3 {
+    width: 1300px;
+    position: relative;
+    top: 9% !important;
+}
+
+.modal-lg-4 {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    top: 9% !important;
+}
+
+.modal-historic-utilisateur {
+    width: 95%;
+    padding-top: 95px;
+    z-index: 905;
+}
+
+.modal-integration-utilisateur {
+    width: 80%;
+    padding-top: 95px;
+    z-index: 905;
+}
+
+.icon-note {
+    height: 40px;
+    padding-top: 5px
+}
+
+.ng-isolate-scope .nav.nav-tabs {
+    display: none;
+}
+
+.btnPurple {
+    background-color: purple;
+    color: white;
+}
+
+.ngx-select__toggle {
+    height: 25px;
+}
+
+.formFocus:focus {
+    border: 2px solid #3292E2;
+}
+
+body .ui-table .ui-sortable-column.ui-state-highlight {
+    background-color: #f4f4f4 !important;
+    color: black;
+}
+
+body .ui-table .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon {
+    color: grey;
+}
+
+input[type=checkbox]:focus, input[type=file]:focus, input[type=radio]:focus, button[type=submit]:focus {
+    outline: 5px auto -webkit-focus-ring-color !important;
+}
+
+input[disabled] {
+    cursor: not-allowed !important;
+    background-color: #eee !important;
+}
+
+.navbar-purple {
+    background-color: #6e587a;
+}
+
+.navbar-height-50 {
+    padding: 16px 13px;
+    line-height: 18px;
+}
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.crudBtn {
+    display: flex;
+    list-style: none;
+}
+
+span {
+    font-size: 13px;
+}
+
+.margin-nav-18 {
+    margin-right: -18px;
+    margin-left: -18px;
+}
+
+.margin-nav-8 {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.col-lg-1-5 {
+    width: 12.5%;
+}
+
+.col-lg-2-5 {
+    width: 21.5%;
+}
+
+.tooltip-background-color.tooltip .tooltip-inner {
+    background-color: #6f6f6f;
+}
+
+.opacity-0-8 {
+    opacity: 0.8 !important;
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+/** Recherche Famille Popover Styling */
+.rechercheFamilleModal {
+    width: 95%;
+}
+
+.etat-sinistre-modal {
+    width: 80%;
+}
+
+/** Recherche Assure Popover Styling */
+.rechercheAssureModal {
+    width: 80%;
+}
+/** Recherche Tiers Popover Styling */
+.rechercheTiersModal {
+    width: 80%;
+}
+
+.loading-backdrop {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.ui-tooltip {
+    background: #727272 !important;
+    box-shadow: inset 0 1px 0 #727272 !important;
+    border-color: #727272 !important;
+}
+
+.ui-tooltip-text {
+    background: #727272 !important;
+    border-color: #727272 !important;
+}
+
+.ui-tooltip.ui-tooltip-bottom .ui-tooltip-arrow {
+    border-bottom-color: #727272 !important;
+}
+
+.ui-tooltip.ui-tooltip-top .ui-tooltip-arrow {
+    border-top-color: #727272 !important;
+}
+
+.ui-tooltip.ui-tooltip-left .ui-tooltip-arrow {
+    border-left-color: #727272 !important;
+}
+
+.ui-tooltip.ui-tooltip-right .ui-tooltip-arrow {
+    border-right-color: #727272 !important;
+}
+
+.date-datepicker {
+    display: inline-flex !important;
+}
+
+.ui-datepicker {
+    width: 22em;
+}
+
+.ui-datepicker-trigger {
+    background: white;
+    border: 2px solid #cccccc;
+    border-left: 0;
+}
+
+.redEtoile {
+    color: Red;
+    top: 5px;
+    font-size: 192%;
+}
+
+.modal-cotisation {
+    width: 90%;
+    padding-top:25px;
+}
+
+.modal-evenement {
+    width: 90%;
+}
+
+.modal-produit {
+    width: 85%;
+    padding-top:25px;
+}
+.modal-fiche-param{
+    width: 80%;
+    z-index: 904;
+    top: 15%;
+}
+
+.modal-chargement {
+    width: 90%;
+    height: 80%;
+    padding-top :75px;
+}
+.modal-suspension {
+    width: 90%;
+    height: 80%;
+    padding-top :75px;
+}
+
+.modal-detail-appel {
+    width: 92%;
+    padding-top: 75px;
+    padding-left: 10.0%;
+    z-index: 905;
+}
+
+.modal-histoged {
+    width: 90%;
+    padding-top: 1em;
+}
+
+.modal-situation-comm {
+    width: 80%;
+}
+
+.modal-instancie {
+    width: 82%;
+}
+
+.modal-consultation-avt-tar {
+    width: 80%;
+}
+
+.modal-cocourtage {
+    width: 70%;
+    z-index: 901!important;
+}
+.modal-ano-rattach-cotis {
+    width: 75.5%;
+    padding-top : 75px;
+    z-index: 900;
+}
+.modal-adherent-ecart {
+    width: 80%;
+}
+
+.modal-frais-acquisition {
+    width: 65%;
+    padding-top: 25px;
+}
+
+.modal-etablissement-lie {
+    width: 65%;
+    margin-top: 110px;
+}
+
+.modal-association-garantie {
+    width: 80%;
+    margin-top: 110px;
+}
+
+.modal-ecart {
+    width: 85%;
+    padding-top: 75px;
+    margin-left: 13%;
+    margin-right: -1.5%;
+    z-index: 905;
+}
+.modal-memo {
+    width: 75.5%;
+    padding-top: 75px;
+    z-index: 905;
+}
+.modal-add-memo-vison-360{
+    width: 60%;
+    padding-top: 14%;
+    padding-left: 8%;
+    z-index: 909;
+}
+.modal-event {
+    width: 80%;
+    padding-top: 8px;
+    z-index: 905;
+    padding-left: 33px;
+}
+
+.modal-affectation-user-profil {
+    width: 76%;
+    padding-top: 8px;
+    z-index: 905;
+}
+
+.modal-bordereau-tier {
+    width: 87.5%;
+    padding-top: 1.5%;
+    z-index: 905;
+    margin-left: 12%;
+}
+
+.modal-mandat {
+    width: 80%;
+    padding-top: 75px;
+}
+
+.modal-groupe-recherche {
+    width: 100%;
+    padding-top: 75px;
+    z-index: 905;
+    padding-left: 200px;
+}
+.modal-reference-bancaire {
+    width: 80%;
+    padding-top: 75px;
+    margin-bottom: 100px;
+}
+
+.modal-reference-popup {
+    width: 80%;
+    padding-top: 75px;
+}
+.modal-event-prev {
+    width: 99%;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    z-index: 905;
+    padding-left: 10%;
+    padding-right: 0%;
+}
+.modal-benef-ext {
+    width: 95%;
+    padding-top: 75px;
+    z-index: 905;
+}
+.modal-affiliation-complements {
+    width: 80%;
+    margin-bottom: 100px;
+}
+.red-color {
+    color: red;
+}
+.modal-masse-salariale {
+    width: 85%;
+    margin-left: 12%;
+    margin-top: 5%;
+}
+.modal-portefeuille-adherent {
+    width: 85%;
+    margin-left: 7%;
+    margin-top: 5%;
+}
+.modal-notice-RGPD {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.modal-guichet-guichetV2 {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+
+.modal-list-guichet-guichetV2 {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+
+
+.modal-compte-attente {
+    width: 70%;
+    margin-left: 18%;
+    margin-top: 8%;
+}
+
+.modal-memo-sinistre {
+    width: 75.5%;
+    padding-top: 75px;
+    z-index: 905;
+}
+
+.modal-expertise-medicale-sinistre {
+    width: 75.5%;
+    padding-top: 75px;
+    z-index: 905;
+}
+
+.modal-recherche-tiers {
+    width: 90%;
+    padding-top: 75px;
+    z-index: 906;
+}
+
+.modal-bordereau-comm {
+    width: 50%;
+    padding-top: 75px;
+    z-index: 905;
+}
+
+.modal-piece-justificative-remuneration {
+    width: 87%;
+    margin-left: 12%;
+    margin-top: 18%;
+}
+
+.modal-vendeur-commissionnement {
+    width: 75.5%;
+    padding-top: 75px;
+    z-index: 905;
+}
+.modal-compte-apporteur-commissionnement {
+    width: 75.5%;
+    padding-top: 75px;
+    z-index: 905;
+}
+.modal-suivi-mvt {
+    width: 85%;
+    padding-top: 75px;
+    z-index: 905;
+}
+.modal-taxe-personalises {
+    width: 75.5%;
+    padding-top: 75px;
+    z-index: 905;
+}
+.modal-rg {
+    width: 70%;
+    padding-top: 7%;
+    z-index: 905;
+    padding-left: 5%;
+}
+.modal-type-rg {
+    width: 50%;
+    padding-top: 9%;
+    z-index: 905;
+    padding-left: 0%;
+}
+.modal-confirm-param-user {
+    width: 30%;
+    padding-top: 9%;
+    z-index: 905;
+    padding-left: 0%;
+}
+
+.modal-clone-user {
+    width: 95%;
+    padding-top: 4%;
+    z-index: 905;
+    padding-left: 10.5%;
+}
+
+.modal-extract-users-rights {
+    width: 50%;
+    padding-top: 10%;
+    z-index: 905;
+    padding-left: 9%;
+}
+
+.modal-statut-calcule {
+    width: 50%;
+    padding-top: 9%;
+    z-index: 905;
+    padding-left: 0%;
+}
+.modal-inter-etab-liee{
+    width: 77.5%;
+    padding-top: 10%;
+    z-index: 893;
+    padding-left: 15%;
+    padding-right: 0%;
+    margin-right: 2%;
+}
+.label-purple-text {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #6e587a !important;
+    padding-left: 15px;
+}
+.modal-piece-justificative {
+    margin-left: 168px;
+    width: 90%;
+    height: 80%;
+    padding-top :75px;
+}
+
+.modal-resiliation-tous-contrats-popup {
+    width: 40%;
+    z-index: 905;
+}
+.modal-resiliation-un-contrat-popup {
+    width: 47%;
+    z-index: 905;
+}
+.modal-radiation-benef-tous-contrats-popup {
+    width: 47%;
+    z-index: 905;
+}
+.modal-radiation-benef-un-contrat-popup {
+    width: 50%;
+    z-index: 905;
+}
+#ui-datepicker-div {
+    z-index: 9999999999 !important;
+}
+
+
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    left: calc(50% - 64px);
+    position: absolute;
+    z-index: 99999;
+    top: calc(50% - 100px);
+  }
+.lds-spinner div {
+    transform-origin: 32px 32px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 29px;
+    width: 5px;
+    height: 14px;
+    border-radius: 20%;
+    background: #000000;
+  }
+  .lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+  }
+  .lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+  }
+  .lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+  }
+  .lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+  }
+  .lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+  }
+  .lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+  }
+  .lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+  }
+  .lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+  }
+  .lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+  }
+  .lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+  }
+  .lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+  }
+  .lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+  }
+  @keyframes lds-spinner {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+.input-group-addon:last-child:focus {
+    border-color: rgb(50, 118, 177)!important;
+}
+.ui-datepicker-trigger:last-child:focus {
+    border-color: rgb(50, 118, 177)!important;
+}
+
+.input-group-addon:last-child:focus {
+    border-color: rgb(50, 118, 177) !important;
+}
+.ui-datepicker-trigger:last-child:focus {
+    border-color: rgb(50, 118, 177) !important;
+}
+
+.ngx-select__item_no-found {
+    color: red;
+}
+
+.excel-open-btn {
+    background-color: #568A89;
+    color: white;
+    height: 30px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    width: 70px;
+}
+
+.exist-note {
+    background-color: #F0EC61 !important;
+    border-color: #F0EC61 !important;
+}
+
+.smart-form .label {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    text-transform: none;
+    font-size: 10px;
+    line-height: 13px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+#listUserTable .ui-table.ui-widget {
+    margin-bottom: 5%;
+}
+#OrgTable .ui-table.ui-widget {
+    margin-bottom: 5%;
+}
+
+#jarviswidget-fullscreen-mode{
+    z-index: 905 !important;
+}
+
+p-paginator.ng-star-inserted {
+    position: relative;
+}
+
+app-owlink-p-table p-dropdown.ng-star-inserted {
+    position: absolute;
+}
+#recherche-sinistre-table-id p-dropdown.ng-star-inserted {
+    position: absolute;
+}
+#recherche-Demande-table-id p-dropdown.ng-star-inserted {
+    position: absolute;
+}
+.spacialModal {
+    bottom: initial !important;
+}
+
+.high-z-index-btn {
+    z-index: 1100 !important;
+    position: relative;
+}
+
+.top-10 {
+    top: 10% !important;
+}
+
+.top-25 {
+    top: 25% !important;
+    padding-top: 0px !important;
+}
+
+.top-40 {
+    top: -20px !important;
+}
+
+.top-26 {
+    top: 26% !important;
+}
+
+.red-background {
+    background-color: #E39FAF !important;
+}
+.red-contrat-lie-background {
+    background-color: mistyrose !important;
+}
+.blue-background {
+    background-color: #9acfea !important;
+}
+.alert-warning-perso {
+    border-width: 0;
+    border-left-width: 5px;
+    padding: 10px;
+    border-color: #dfb56c;
+    color: #826430;
+    background-color: #efe1b3;
+}
+.aligntext-perso {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom-width: 0px;
+}
+
+.modal-radiation {
+    width: 70%;
+}
+
+.scroll-resiliation {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    max-height: 880px !important;
+}
+
+.scroll-resiliation-2 {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    max-height: 600px !important;
+}
+
+.modal-scroll {
+    height: 100% !important;
+    overflow: scroll !important;
+}
+
+label.input input:focus {
+    outline: rgba(0, 110, 255, 0.8) auto 7px !important;
+}
+
+.scroll-groupe {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    max-height: 750px !important;
+}
+
+.modal-detail-virement-tier {
+    width: 85%;
+    padding-top: 75px;
+    z-index: 905;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0px !important;
+}
+
+.ui-dropdown-trigger {
+    color: black !important;
+    border-left: none !important;
+    font-size: 13px !important;
+    pointer-events: none;
+}
+
+.ui-dropdown-label {
+    padding: 3px 6px !important;
+}
+
+.no-min-width .ui-dropdown {
+    min-width: 0;
+}
+
+.autocomplete-style {
+    width: available;
+    height: 100%;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.right-border {
+    border-right-color: rgb(204, 204, 204) !important;
+    border-right-style: solid !important;
+    border-right-width: 1px !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.line-height-1_3 {
+    line-height: 1.3 !important;
+}
+
+.title-section {
+    color: purple;
+    font-size: medium;
+}
+
+.title-section hr {
+    border-top: 2px solid purple
+}
+
+.row {
+    margin-bottom: 1em !important;
+}
+
+.error-msg {
+    font-size: 10px;
+    line-height: 13px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    text-transform: lowercase !important;
+    color: red;
+}
+
+.padding-top-5 {
+    padding-top: 5px !important;
+}
+
+.padding-top-20 {
+    padding-top: 20px !important;
+}
+
+.margin-right-10 {
+    margin-right: 10px !important;
+}
+
+.padding-left-5 {
+    padding-left: 5px !important;
+}
+
+
+.button-perso {
+    background: #57889c !important;
+}
+
+.purple-light {
+    border-color: #AAA2D1 !important;
+    background: #AAA2D1 !important;
+    color: #fff !important;
+}
+
+.dropdown-panel-large {
+    width: 55em !important;
+}
+
+.padding-top-25 {
+    padding-top: 25px !important;
+}
+
+#fait-generateurlist-sinistres-table p-dropdown .ui-dropdown {
+    min-width: 0 !important;
+}
+
+.modal-pieces-just {
+    width: 600px;
+    padding-top: 75px;
+    z-index: 906;
+    padding-left: 10%;
+    padding-right: 0%;
+}
+
+.modal-date-revalorisation {
+
+    width: 70%;
+    margin-left: 20%;
+    margin-top: 18%;
+}
+/** Recherche Entreprise */
+.rechercheEntrepriseModal {
+    width: 95%;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.ui-dropdown {
+    width: 100%;
+}

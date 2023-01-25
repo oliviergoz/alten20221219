@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "baseUrl": "./src/",
+    "paths": {
+      "@owlink/*": ["app/*"],
+      "@owlink-assets/*": ["assets/*"],
+      "@owlink-env/*": ["environments/*"],
+      "@owlink-shared/*": ["app/shared/*"],
+      "@owlink-layout/*": ["app/shared/layout/*"],
+      "@owlink-guichet/*": ["app/features/GuichetModule/*"],
+      "@owlink-groupe-collectif/*": ["app/features/groupes-collectifs-module/*"],
+      "@owlink-gestion-utilisateur/*": ["app/features/gestion-utilisateur-module/*"],
+      "@owlink-reglement-collectif/*": ["app/features/groupes-collectifs-module/components/contrat-collectif/gestion-reglement/*"]
+    }
+  }
+}

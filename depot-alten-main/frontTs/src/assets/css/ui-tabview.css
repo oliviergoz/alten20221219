@@ -1,0 +1,16 @@
+.ui-tabview-nav li:not(.ui-tabview-selected) {
+    background-color: white !important;
+}
+
+.ui-tabview-nav li:not(.ui-tabview-selected) a {
+    color: #404040 !important;
+}
+
+.ui-tabview-nav .ui-tabview-selected {
+    background-color: #6e587a !important;
+    border: 1px solid #665271 !important;
+}
+
+.ui-tabview-nav .ui-tabview-selected a {
+    color: white !important;
+}

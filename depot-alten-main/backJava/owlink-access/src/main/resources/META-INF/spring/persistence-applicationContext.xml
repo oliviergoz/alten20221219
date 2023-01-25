@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+								http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+
+								http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:property-placeholder location="classpath*:*application.properties"/>
+
+
+    <!-- Datasources pooling with C3P0 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="${oracle.driverClassName}"/>
+        <property name="jdbcUrl" value="${oracle.url}"/>
+        <property name="user" value="${oracle.username}"/>
+        <property name="password" value="${oracle.password}"/>
+        <property name="initialPoolSize" value="5"/>
+        <property name="minPoolSize" value="2"/>
+        <property name="maxPoolSize" value="50"/>
+        <property name="acquireIncrement" value="2"/>
+        <property name="maxStatements" value="1000"/>
+        <property name="checkoutTimeout" value="15000"/>
+        <property name="maxIdleTime" value="600"/>
+        <property name="maxConnectionAge" value="14400"/>
+        <property name="maxIdleTimeExcessConnections" value="1800"/>
+        <property name="testConnectionOnCheckout" value="false"/>
+        <property name="unreturnedConnectionTimeout" value="300"/>
+        <property name="debugUnreturnedConnectionStackTraces" value="true"/>
+        <property name="connectionCustomizerClassName"
+                  value="com.owliance.owlink.configuration.datasource.ClientInfoConnectionCustomizer"/>
+    </bean>
+
+    <!-- Configure bean UserProvider -->
+    <bean id="usernameProvider" class="com.owliance.owlink.access.provider.UserProvider"/>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="fetchSize" value="500"/>
+    </bean>
+
+    <!-- Template acceptant une Map de paramètre lors des requêtes -->
+    <bean id="namedJdbcTemplate"
+          class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+
+    <bean
+            class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+    <cache:annotation-driven/>
+
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager"
+          p:cache-manager-ref="ehcache"/>
+
+    <!-- EhCache library setup -->
+    <bean id="ehcache"
+          class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
+          p:config-location="classpath:ehcache.xml"/>
+
+</beans>

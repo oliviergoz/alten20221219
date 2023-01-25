@@ -1,0 +1,17 @@
+ul.nav-wizard li:not(.not-done) {
+  background-color: #9a99bd;
+  color: white;
+}
+
+ul.nav-wizard li:not(.not-done):after {
+  border-left: 16px solid #9a99bd;
+}
+
+ul.nav-wizard li.active:not(.not-done) {
+  background-color: #6e587a;
+  color: white;
+}
+
+ul.nav-wizard li.active:not(.not-done):after {
+  border-left: 16px solid #6e587a;
+}

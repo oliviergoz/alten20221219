@@ -1,0 +1,23 @@
+<project name="owlink-access" basedir=".">
+    <description>Build du projet</description>
+    <target name="init">
+        <condition property="prod.env">
+            <equals arg1="${client}" arg2="default"/>
+        </condition>
+    </target>
+    <target name="prod" if="prod.env" depends="init">
+        <replace file="${project.build.outputDirectory}/log4j.xml">
+            <replacefilter token="@token@" value="ERROR"/>
+        </replace>
+    </target>
+    <target name="dev" unless="prod.env" depends="init">
+        <copy
+            file="${basedir}/../client.properties.example"
+            tofile="${basedir}/../client.properties"
+        />
+
+        <replace file="${project.build.outputDirectory}/log4j.xml">
+            <replacefilter token="@token@" value="INFO"/>
+        </replace>
+    </target>
+</project>
